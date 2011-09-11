@@ -1,3 +1,4 @@
-quotes_lastest:
-    pattern:  /lastest/{max_quotes}
-    defaults: { _controller: EpiquoteQuotesBundle:Quotes:lastest, max_quotes: 10 }
+EpiquoteQuotesBundle_quotes:
+    resource: "@EpiquoteQuotesBundle/Resources/config/routing/quote.yml"
+    prefix:   /quotes
+

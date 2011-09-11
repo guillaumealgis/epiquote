@@ -4,7 +4,7 @@ epiquote_homepage:
 
 EpiquoteQuotesBundle:
     resource: "@EpiquoteQuotesBundle/Resources/config/routing.yml"
-    prefix:   /quotes/
+    prefix:   /
 
 # Internal routing configuration to handle ESI
 #_internal:

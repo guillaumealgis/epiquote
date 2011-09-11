@@ -1,0 +1,30 @@
+quote:
+    pattern:  /
+    defaults: { _controller: "EpiquoteQuotesBundle:Quote:index" }
+
+quote_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EpiquoteQuotesBundle:Quote:show" }
+
+quote_new:
+    pattern:  /new
+    defaults: { _controller: "EpiquoteQuotesBundle:Quote:new" }
+
+quote_create:
+    pattern:  /create
+    defaults: { _controller: "EpiquoteQuotesBundle:Quote:create" }
+    requirements: { _method: post }
+
+quote_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EpiquoteQuotesBundle:Quote:edit" }
+
+quote_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EpiquoteQuotesBundle:Quote:update" }
+    requirements: { _method: post }
+
+quote_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EpiquoteQuotesBundle:Quote:delete" }
+    requirements: { _method: post }

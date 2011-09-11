@@ -62,6 +62,10 @@ class Quote
      */
     public function setCreatedAtvalue()
     {
+        if (!$this->rank) {
+            $this->rank = 0;
+        }
+                
         $this->created_at = new \DateTime();
     }
 
