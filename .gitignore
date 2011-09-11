@@ -2,3 +2,6 @@
 # one can simply run the php bin/vendors install script to download all the
 # necessary vendor libraries
 vendor/
+
+# Cache directory
+app/cache/*
