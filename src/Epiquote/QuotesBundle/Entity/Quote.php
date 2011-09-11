@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Epiquote\QuotesBundle\Entity\QuoteRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Quote
 {
@@ -48,6 +49,21 @@ class Quote
      * @ORM\Column(name="content", type="text")
      */
     private $content;
+    
+    /**
+     * @var DateTime $createdAt
+     * 
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $created_at;
+    
+    /**
+     * @ORM\prePersist
+     */
+    public function setCreatedAtvalue()
+    {
+        $this->created_at = new \DateTime();
+    }
 
 
     /**
@@ -138,5 +154,25 @@ class Quote
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set created_at
+     *
+     * @param datetime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+    }
+
+    /**
+     * Get created_at
+     *
+     * @return datetime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
     }
 }

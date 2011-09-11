@@ -2,6 +2,9 @@
 
 {% block body %}
     {% for quote in quotes %}
-        <p>{{ quote }}</p>
+        <p>--- {{quote.author}} [{{quote.rank}}]<br />
+            Contexte: {{quote.context}}<br />
+            {{ quote.content | raw }}<br />
+        ---</p>
     {% endfor %}
 {% endblock %}

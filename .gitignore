@@ -5,3 +5,6 @@ vendor/
 
 # Cache directory
 app/cache/*
+
+# Logs
+app/logs/
