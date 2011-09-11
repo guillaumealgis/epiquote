@@ -1,0 +1,3 @@
+quotes_lastest:
+    pattern:  /lastest/{max_quotes}
+    defaults: { _controller: EpiquoteQuotesBundle:Quotes:lastest, max_quotes: 10 }

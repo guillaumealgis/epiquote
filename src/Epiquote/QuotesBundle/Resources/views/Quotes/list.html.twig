@@ -1,0 +1,7 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% for quote in quotes %}
+        <p>{{ quote }}</p>
+    {% endfor %}
+{% endblock %}
