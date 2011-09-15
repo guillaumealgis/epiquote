@@ -10,3 +10,5 @@ app/cache/*
 app/logs/
 
 *.DS_Store
+#*#
+*~
