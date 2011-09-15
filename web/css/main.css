@@ -1,0 +1,120 @@
+/* 
+    Document   : main.css
+    Created on : 14 sept. 2011, 23:35:34
+    Author     : guillaume algis
+    Description:
+        Main stylesheet for epiquote.fr
+*/
+
+/* =============    General rules    ================ */
+
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+body
+{
+  font-family: Georgia, Norasi, serif;
+  background: url('../images/sheet_background.png') repeat #dde0e4;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+/* =============      Header         ================ */
+
+#header
+{
+  height: 210px;
+  background: url('../images/header_background.png') repeat-x #0e3555;
+}
+
+#header_content
+{
+  width: 800px;
+  height: 100%;
+  margin: auto;
+  background: url('../images/logo_background.png') no-repeat #0e3555;
+}
+
+#logo
+{
+  width: 275px; /* 245px + 30px */
+  margin: auto;
+  padding-top: 60px;
+}
+
+#header_menu
+{
+  width: 500px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+#header_menu ul li
+{
+  padding: 0 25px;
+  float: left;
+  list-style: none;
+}
+
+#header_menu ul li a
+{
+  font-weight: bold;
+  text-align: center;
+  color: #cdcdcd;
+  text-shadow: 0px 1px 1px #000;
+  
+  -webkit-transition: color 300ms linear;
+  -moz-transition: color 300ms linear;
+  -o-transition: color 300ms linear;
+  transition: color 300ms linear;
+}
+
+#header_menu ul li a:hover
+{
+  color: white;
+}
+
+/* =======================    Sheet     ========================= */
+
+#sheet
+{
+  border-top: 1px solid white;
+}
+
+#content
+{
+  width: 800px;
+  margin: auto;
+}
+
+/* =======================     Quotes   ========================= */
+
+.quote
+{
+  
+}
+
+.quote_rank
+{
+  width: 155px;
+  height: 100%;
+  float: left;
+}
+
+.quote_rank p
+{
+  text-align: center;
+}
+
+.quote_content
+{
+  width: 500px;
+  height: 100%;
+  float: left;
+}
