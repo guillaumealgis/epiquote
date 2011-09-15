@@ -8,3 +8,5 @@ app/cache/*
 
 # Logs
 app/logs/
+
+*.DS_Store
