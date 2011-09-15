@@ -17,13 +17,13 @@ class QuoteController extends Controller
      * Lists all Quote entities.
      *
      */
-    public function indexAction()
+    public function allAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
 
         $entities = $em->getRepository('EpiquoteQuotesBundle:Quote')->findAll();
 
-        return $this->render('EpiquoteQuotesBundle:Quote:index.html.twig', array(
+        return $this->render('EpiquoteQuotesBundle:Quote:all.html.twig', array(
             'entities' => $entities
         ));
     }
@@ -183,5 +183,21 @@ class QuoteController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+    
+    /**
+     * Show lastest quotes
+     */
+    public function lastestAction()
+    {
+        // FIXME: get only lastest
+        
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $entities = $em->getRepository('EpiquoteQuotesBundle:Quote')->findAll();
+
+        return $this->render('EpiquoteQuotesBundle:Quote:list.html.twig', array(
+            'quotes' => $entities
+        ));
     }
 }

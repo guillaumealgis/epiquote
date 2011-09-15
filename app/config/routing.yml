@@ -1,6 +1,6 @@
 epiquote_homepage:
     pattern:  /
-    defaults: { _controller: EpiquoteQuotesBundle:Default:index }
+    defaults: { _controller: EpiquoteQuotesBundle:Quote:lastest }
 
 EpiquoteQuotesBundle:
     resource: "@EpiquoteQuotesBundle/Resources/config/routing.yml"

@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/main.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+  {% block header %}
+  <div id="header">
+    <div id="header_content">
+      <h1 id="logo">
+        <img src="{{ asset('images/logo_epiquote.png') }}" alt="epiquote" />
+      </h1>
+      
+      
+      {% block header_menu %}
+      <div id="header_menu">
+        <ul>
+          <li><a href="#">lastest</a></li>
+          <li><a href="#">top</a></li>
+          <li><a href="#">random</a></li>
+          <li><a href="#">search</a></li>
+          <li><a href="#">add</a></li>
+        </ul>
+      </div>
+      {% endblock %}
+    </div>
+  </div>
+  {% endblock %}
+  
+  {% block sheet %}
+  <div id="sheet">
+    <div id="content">
+      {% block flash %}
+      
+      {% endblock %}
+      
+      {% block news %}
+      
+      {% endblock %}
+      
+      {% block content %}
+      
+      {% endblock %}
+    </div>
+  </div>
+  {% endblock %}
+
+{% endblock %}

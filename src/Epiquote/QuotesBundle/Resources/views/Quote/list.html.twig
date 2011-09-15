@@ -1,0 +1,19 @@
+{% extends '::layout.html.twig' %}
+
+{% block content %}
+  {% for quote in quotes %}
+  <div class="quote">
+    <div class="quote_rank">
+      <p>
+        {{ quote.rank }}
+      </p>
+    </div>
+    <div class="quote_content">
+      --- {{quote.author}} [{{quote.rank}}]<br />
+      Contexte: {{quote.context}}<br />
+      {{ quote.content | raw }}<br />
+      ---
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}
