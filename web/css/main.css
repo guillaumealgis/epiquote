@@ -57,14 +57,13 @@ a
 
 #header_menu ul li
 {
-  padding: 0 25px;
+  padding: 0 30px;
   float: left;
   list-style: none;
 }
 
 #header_menu ul li a
 {
-  font-weight: bold;
   text-align: center;
   color: #cdcdcd;
   text-shadow: 0px 1px 1px #000;
@@ -97,24 +96,38 @@ a
 
 .quote
 {
-  
+  float: left;
+  margin-top: 50px;
+  text-shadow: 0px 1px 1px #FFF;
 }
 
 .quote_rank
 {
   width: 155px;
-  height: 100%;
+  float: left;
+  color: #a0a0a0;
+  font-size: 1.5em;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.quote_body
+{
+  width: 500px;
   float: left;
 }
 
-.quote_rank p
+.quote_author
 {
-  text-align: center;
+  color: #5d7ca3;
+}
+
+.quote_context
+{
+  color: #7f7f7f;
 }
 
 .quote_content
 {
-  width: 500px;
-  height: 100%;
-  float: left;
+  color: #3d3c3c;
 }

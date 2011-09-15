@@ -8,11 +8,16 @@
         {{ quote.rank }}
       </p>
     </div>
-    <div class="quote_content">
-      --- {{quote.author}} [{{quote.rank}}]<br />
-      Contexte: {{quote.context}}<br />
-      {{ quote.content | raw }}<br />
-      ---
+    <div class="quote_body">
+      <p class="quote_author">{{quote.author}}</p>
+      <br />
+      <p>
+        {% if quote.context %}
+          <span class="quote_context">Contexte: {{quote.context}}</span>
+          <br />
+        {% endif %}
+        <span class="quote_content">{{ quote.content | raw }}</span>
+      </p>
     </div>
   </div>
   {% endfor %}
