@@ -57,7 +57,3 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
-    
-# Custom epiquote configuration
-epiquote:
-    max_quote_per_page: 10
