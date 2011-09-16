@@ -1,11 +1,23 @@
 {% extends '::layout.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/epiquotequotes/css/quotes.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+    
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/epiquotequotes/js/quotes.js') }}"></script>
+{% endblock %}
+
 {% block content %}
   {% for quote in quotes %}
   <div class="quote">
     <div class="quote_rank">
       <p>
-        {{ quote.rank }}
+        <a class="rate_symbols" href="#">-</a>
+        &nbsp;{{ quote.rank }}&nbsp;
+        <a class="rate_symbols" href="#">+</a>
       </p>
     </div>
     <div class="quote_body">

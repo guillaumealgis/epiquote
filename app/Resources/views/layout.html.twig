@@ -3,6 +3,10 @@
 {% block stylesheets %}
     <link href="{{ asset('css/main.css') }}" type="text/css" rel="stylesheet" />
 {% endblock %}
+    
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/jquery-1.6.4.min.js') }}"></script>
+{% endblock %}
 
 {% block body %}
   {% block header %}
