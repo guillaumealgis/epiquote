@@ -1,0 +1,22 @@
+{% extends '::layout.html.twig' %}
+{% import 'EpiquoteQuotesBundle:Quote:macros.html.twig' as macros %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/epiquotequotes/css/quotes.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+    
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/epiquotequotes/js/quotes.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+  {% include 'EpiquoteQuotesBundle:Quote:list.html.twig' with {'quotes': quotes} %}
+  <div class="clear"></div>
+  
+  {% if quotes | length > 0 %}
+    {{ macros.more_block(path('quote_list', { 'ordering': ordering, 'page': page + 1 }),
+        ordering == 'random' ? 'Again !' : 'Next page') }}  
+  {% endif %}
+{% endblock %}

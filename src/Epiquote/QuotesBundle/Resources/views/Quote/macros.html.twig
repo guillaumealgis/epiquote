@@ -1,0 +1,7 @@
+{% macro more_block(link, text) %}
+  <div class="block_info" id="block_more">
+    <a href="{{ link }}">
+      {{ text | default('More') }}
+    </a>
+  </div>
+{% endmacro %}

@@ -186,18 +186,39 @@ class QuoteController extends Controller
     }
     
     /**
-     * Show lastest quotes
+     * Show a list of quotes, ordered by [lastest | top rated | random] and paginated
      */
-    public function lastestAction()
+    public function listAction($ordering, $page)
     {
-        // FIXME: get only lastest
-        
-        $em = $this->getDoctrine()->getEntityManager();
+      $em = $this->getDoctrine()->getEntityManager();
+      $repo = $em->getRepository('EpiquoteQuotesBundle:Quote');
+      
+      $entities = array();
+      switch ($ordering)
+      {
+        case 'lastest':
+          $entities = $repo->findLastests($page);
+          break;
+        case 'top':
+          $entities = $repo->findBestRateds($page);
+          break;
+        case 'random':
+          $entities = $repo->findRandoms($page);
+          break;
 
-        $entities = $em->getRepository('EpiquoteQuotesBundle:Quote')->findAll();
+        default:
+          break;
+      }
 
-        return $this->render('EpiquoteQuotesBundle:Quote:list.html.twig', array(
-            'quotes' => $entities
-        ));
+      if ($this->get('request')->isXmlHttpRequest())
+        $view = 'EpiquoteQuotesBundle:Quote:list.html.twig';
+      else
+        $view = 'EpiquoteQuotesBundle:Quote:list_layout.html.twig';
+      
+      return $this->render($view, array(
+          'quotes'   => $entities,
+          'ordering' => $ordering,
+          'page'     => $page
+      ));
     }
 }

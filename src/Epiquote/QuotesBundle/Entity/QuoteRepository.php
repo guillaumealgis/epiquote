@@ -11,5 +11,54 @@ use Doctrine\ORM\EntityRepository;
  * repository methods below.
  */
 class QuoteRepository extends EntityRepository
-{
+{  
+  public function findLastests($page = 1, $max_quotes_per_page = 10)
+  {
+    if ($page < 0)
+      throwException (new \InvalidArgumentException ('$page cannot be negative.'));
+    
+    $qb = $this->createQueryBuilder('q')
+            ->orderBy('q.created_at', 'DESC')
+            ->setFirstResult(($page -  1) * $max_quotes_per_page)
+            ->setMaxResults($max_quotes_per_page);
+    
+    return $qb->getQuery()->getResult();
+  }
+  
+  public function findBestRateds($page = 1, $max_quotes_per_page = 10)
+  {
+    if ($page < 0)
+      throwException (new \InvalidArgumentException ('$page cannot be negative.'));
+    
+    $qb = $this->createQueryBuilder('q')
+            ->orderBy('q.rank', 'DESC')
+            ->setFirstResult(($page -  1) * $max_quotes_per_page)
+            ->setMaxResults($max_quotes_per_page);
+    
+    return $qb->getQuery()->getResult();
+  }
+  
+  public function findRandoms($page = 1, $max_quotes_per_page = 10)
+  {
+    if ($page < 0)
+      throwException (new \InvalidArgumentException ('$page cannot be negative.'));
+    
+    // We create an array of shuffled ids to show randoms quotes
+    $qb = $this->createQueryBuilder('q')
+            ->select('q.id');
+    $ids = $qb->getQuery()->getResult();
+    foreach ($ids as $key => $array_id)
+      $ids[$key] = $array_id['id'];
+    shuffle($ids);
+    
+    // We take a slice of ids (yum !) and find the designated quotes
+    $ids_slice = array_slice($ids,
+            ($page -  1) * $max_quotes_per_page,
+            $max_quotes_per_page);
+    
+    $qb = $this->createQueryBuilder('q')
+            ->add('where', $qb->expr()->in('q.id', $ids_slice));
+    
+    return $qb->getQuery()->getResult();
+  }
 }

@@ -26,6 +26,17 @@ a
   text-decoration: none;
 }
 
+.clear
+{
+  display: block;
+  clear: both;
+}
+
+.centered
+{
+  text-align: center;
+}
+
 /* =============      Header         ================ */
 
 #header
@@ -86,6 +97,8 @@ a
 {
   border-top: 1px solid white;
   padding-top: 30px;
+  color: #686868;
+  text-shadow: 0px 1px 1px #FFF;
 }
 
 #content

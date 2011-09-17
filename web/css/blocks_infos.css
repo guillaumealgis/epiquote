@@ -1,0 +1,60 @@
+/* 
+    Document   : blocks_infos.css
+    Created on : 17 sept. 2011, 13:52:49
+    Author     : Guillaume
+    Description:
+        CSS for incrusted in the page blocks (like the news and "moar" ones).
+*/
+
+.block_info
+{
+  width: 500px;
+  min-height: 50px;
+  margin: auto;
+  padding: 10px;
+  background: url('../images/sheet_background_dark.png') repeat #c1c3c6;
+  
+  text-shadow: 0px 1px 1px #FFF;
+  
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  
+  -webkit-box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
+  -moz-box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
+  box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
+}
+
+#block_more
+{
+  min-height: 10px;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+#block_more a
+{
+  padding: 0 30px;
+  
+  -webkit-transition: color 300ms linear;
+  -moz-transition: color 300ms linear;
+  -o-transition: color 300ms linear;
+  transition: color 300ms linear;
+}
+
+#block_more a:hover
+{
+  color: #aaaaaa;
+}
+
+#block_more a.loading
+{
+  background: url('../images/ajax-loader.gif') no-repeat center left;
+}
+
+#block_more a.loading:hover
+{
+  color:inherit;
+  cursor: default;
+}
+

@@ -1,6 +1,8 @@
-quote:
-    pattern:  /
-    defaults: { _controller: "EpiquoteQuotesBundle:Quote:index" }
+quote_list:
+    pattern:  /{ordering}/{page}
+    defaults: { _controller: "EpiquoteQuotesBundle:Quote:list", page: 1 }
+    requirements:
+      page: \d+    
 
 quote_show:
     pattern:  /{id}/show
@@ -29,8 +31,7 @@ quote_delete:
     defaults: { _controller: "EpiquoteQuotesBundle:Quote:delete" }
     requirements: { _method: post }
     
-quote_lastest:
-    pattern:  /lastest/{page}
-    defaults: { _controller: "EpiquoteQuotesBundle:Quote:lastest", page: 1 }
-    requirements:
-      page: \d+
+quote_search:
+    pattern: /search
+    defaults: { _contoller: "EpiquoteQuotesBundle:Quote:search" }
+

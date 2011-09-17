@@ -48,6 +48,11 @@
   background: url('../images/quotes_separator.png') no-repeat bottom center;
 }
 
+.quote[class~=no-separator] .quote_body
+{
+  background: none;
+}
+
 .quote_author
 {
   color: #5d7ca3;
