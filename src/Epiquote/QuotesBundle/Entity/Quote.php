@@ -60,10 +60,14 @@ class Quote
     /**
      * @ORM\prePersist
      */
-    public function setCreatedAtvalue()
+    public function setDefaultValues()
     {
         if (!$this->rank) {
             $this->rank = 0;
+        }
+        
+        if (!$this->context) {
+            $this->context = '';
         }
                 
         $this->created_at = new \DateTime();

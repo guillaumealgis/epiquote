@@ -45,7 +45,10 @@ quote_downvote:
       
 quote_list:
     pattern:  /{ordering}/{page}
-    defaults: { _controller: "EpiquoteQuotesBundle:Quote:list", page: 1 }
+    defaults:
+      _controller: "EpiquoteQuotesBundle:Quote:list"
+      ordering: lastest
+      page: 1
     requirements:
       page: \d+
 

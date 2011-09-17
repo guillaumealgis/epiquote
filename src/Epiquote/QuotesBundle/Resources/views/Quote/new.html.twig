@@ -1,10 +1,35 @@
 {% extends '::layout.html.twig' %}
 
+{% block stylesheets %}
+  {{ parent() }}
+
+  <link href="{{ asset('css/forms.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
 {% block content %}
   <form action="{{ path('quote_create') }}" method="post" {{ form_enctype(form) }}>
-      {{ form_widget(form) }}
+      {{ form_errors(form) }}
+
+      <div>
+          {{ form_label(form.author, 'Auteur') }}
+          {{ form_errors(form.author) }} <br/>
+          {{ form_widget(form.author) }}
+      </div> <br/>
+
+      <div>
+          {{ form_label(form.context, 'Contexte') }}
+          {{ form_errors(form.context) }} <br/>
+          {{ form_widget(form.context) }}
+      </div> <br/>
+
+      <div>
+          {{ form_errors(form.content) }}
+          {{ form_widget(form.content) }}
+      </div> <br/>
+
+      {{ form_rest(form) }}
       <p>
-          <button type="submit">Create</button>
+          <button type="submit">Ajouter cette quote</button>
       </p>
   </form>
 {% endblock %}

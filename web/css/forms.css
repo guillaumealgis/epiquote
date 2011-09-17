@@ -1,0 +1,47 @@
+/* 
+    Document   : forms.css
+    Created on : 17 sept. 2011, 23:44:02
+    Author     : Guillaume
+    Description:
+        Forms customization
+*/
+
+form
+{
+  width: 90%;
+  margin: auto; 
+  font-size: 1.2em;
+}
+
+input, textarea, select
+{
+  font-size: 1em;
+  padding: 10px;
+  font-family: inherit;
+  color: #4d4d4d;
+  
+  text-shadow: 0px 1px 1px #FFF;
+  background: url('../images/sheet_background_dark.png') repeat #c1c3c6;
+  border: none;
+  -webkit-box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
+  -moz-box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
+  box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
+}
+
+form button
+{
+  font-size: 0.8em;
+  padding: 5px 10px;
+}
+
+input[type=text]
+{
+  width: 100%;
+}
+
+textarea
+{
+  width: 100%;
+  min-height: 100px;
+}
+

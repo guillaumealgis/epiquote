@@ -82,8 +82,10 @@ class QuoteController extends Controller
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($entity);
             $em->flush();
+            
+            $this->get('session')->setFlash('success', 'Votre quote a été enregistrée');
 
-            return $this->redirect($this->generateUrl('quote_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('quote_list'));
             
         }
 

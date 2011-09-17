@@ -10,14 +10,14 @@ class QuoteType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('author')
-            ->add('context')
+            ->add('author', null)
+            ->add('context', 'text', array('required' => false))
             ->add('content')
         ;
     }
 
     public function getName()
     {
-        return 'epiquote_quotesbundle_quotetype';
+        return 'quote';
     }
 }
