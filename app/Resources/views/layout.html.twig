@@ -2,10 +2,12 @@
 
 {% block stylesheets %}
     <link href="{{ asset('css/main.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('css/flashes.css') }}" type="text/css" rel="stylesheet" />
 {% endblock %}
     
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('js/jquery-1.6.4.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/flashes.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -34,11 +36,27 @@
   
   {% block sheet %}
   <div id="sheet">
-    <div id="content">
-      {% block flash %}
-      
-      {% endblock %}
-      
+    {% block flash %}
+      {% if app.session.hasFlash('success') %}
+        <div class="flash-message flash-success">
+          {{ app.session.flash('success') }}
+        </div>
+      {% endif %}
+
+      {% if app.session.hasFlash('notice') %}
+        <div class="flash-message flash-notice">
+          {{ app.session.flash('notice') }}
+        </div>
+      {% endif %}
+
+      {% if app.session.hasFlash('error') %}
+        <div class="flash-message flash-error">
+          {{ app.session.flash('error') }}
+        </div>
+      {% endif %}
+    {% endblock %}
+    
+    <div id="content">      
       {% block news %}
       
       {% endblock %}

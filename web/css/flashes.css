@@ -1,0 +1,39 @@
+/* 
+    Document   : flashes.css
+    Created on : 17 sept. 2011, 10:37:26
+    Author     : Guillaume
+    Description:
+        CSS for Symfony flash alerts.
+*/
+
+.flash-message
+{
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background: url('../images/sheet_background_dark.png') repeat #c1c3c6;
+  color: #3d3c3c;
+  font-size: 0.9em;
+  font-weight: bold;
+  
+  text-shadow: 0px 1px 1px #FFF;
+  
+  -webkit-box-shadow: inset 0px 1px 1px #b8babd, inset 0px -1px 1px #eff0f2;
+  -moz-box-shadow: inset 0px 1px 1px #b8babd, inset 0px -1px 1px #eff0f2;
+  box-shadow: inset 0px 1px 1px #b8babd, inset 0px -1px 1px #eff0f2;
+}
+
+.flash-success
+{
+  color: #20862c;
+}
+
+.flash-notice
+{
+  color: #3b5f9b;
+}
+
+.flash-error
+{
+  color: #9e2a2a;
+}
