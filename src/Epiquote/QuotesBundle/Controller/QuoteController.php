@@ -3,6 +3,7 @@
 namespace Epiquote\QuotesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 
 use Epiquote\QuotesBundle\Entity\Quote;
 use Epiquote\QuotesBundle\Form\QuoteType;
@@ -207,6 +208,7 @@ class QuoteController extends Controller
           break;
 
         default:
+          throw $this->createNotFoundException('Bad ordering "'.$ordering.'"');
           break;
       }
 
@@ -220,5 +222,40 @@ class QuoteController extends Controller
           'ordering' => $ordering,
           'page'     => $page
       ));
+    }
+    
+    /**
+     * Increase or decrease the rank of a quote
+     * 
+     * @param type $id The quote id
+     * @param type $delta The operation on the rank 1 = increase, -1 = decrease
+     */
+    public function voteAction($id, $delta)
+    {
+      $em = $this->getDoctrine()->getEntityManager();
+      
+      try
+      {
+        $quote = $em->getRepository('EpiquoteQuotesBundle:Quote')->find($id);
+        if ($delta == 1)
+          $quote->rankIncrease();
+        else if ($delta == -1)
+          $quote->rankDecrease();
+        else
+          throw new \InvalidArgumentException ('Delta should be 1 or -1');
+          
+        $em->flush();
+      } catch (Exception $e)
+      {
+        $this->get('session')->setFlash('success', 'Une erreur s\'est produite,'
+                . 'votre vote n\'a pas été pris en compte');
+      }
+      
+      $this->get('session')->setFlash('success', 'Merci de votre vote');
+      
+      if (isset($_SERVER['HTTP_REFERER']))
+        return $this->redirect($_SERVER['HTTP_REFERER']);
+      else
+        return $this->redirect($this->generateUrl('epiquote_homepage'));
     }
 }

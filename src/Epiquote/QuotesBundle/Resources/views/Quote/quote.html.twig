@@ -5,9 +5,9 @@
 {% endif %}
       <div class="quote_rank">
         <p>
-          <a class="rate_symbols" href="#">-</a>
+          <a class="rate_symbols" href="{{ path('quote_downvote', { 'id': quote.id }) }}">-</a>
           &nbsp;{{ quote.rank }}&nbsp;
-          <a class="rate_symbols" href="#">+</a>
+          <a class="rate_symbols" href="{{ path('quote_upvote', { 'id': quote.id }) }}">+</a>
         </p>
       </div>
       <div class="quote_body">

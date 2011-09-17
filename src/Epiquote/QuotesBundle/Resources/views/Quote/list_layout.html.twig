@@ -11,12 +11,14 @@
     <script type="text/javascript" src="{{ asset('bundles/epiquotequotes/js/quotes.js') }}"></script>
 {% endblock %}
 
-{% block content %}
+{% block wide_content %}
+  {{ parent() }}  
+    
   {% include 'EpiquoteQuotesBundle:Quote:list.html.twig' with {'quotes': quotes} %}
   <div class="clear"></div>
   
   {% if quotes | length > 0 %}
     {{ macros.more_block(path('quote_list', { 'ordering': ordering, 'page': page + 1 }),
-        ordering == 'random' ? 'Again !' : 'Next page') }}  
+        'Next page') }}  
   {% endif %}
 {% endblock %}

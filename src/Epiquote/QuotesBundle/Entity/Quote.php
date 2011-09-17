@@ -111,6 +111,26 @@ class Quote
     }
 
     /**
+     * Set rank to rank + 1
+     *
+     * @param integer $rank
+     */
+    public function rankIncrease()
+    {
+        $this->rank = $this->rank + 1;
+    }
+
+    /**
+     * Set rank to rank - 1
+     *
+     * @param integer $rank
+     */
+    public function rankDecrease()
+    {
+        $this->rank = $this->rank - 1;
+    }
+
+    /**
      * Get rank
      *
      * @return integer 

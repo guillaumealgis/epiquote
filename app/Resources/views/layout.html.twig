@@ -57,13 +57,16 @@
       {% endif %}
     {% endblock %}
     
-    <div id="content">      
-      {% block news %}
+    <div id="wide_content">      
       
-      {% endblock %}
-      
-      {% block content %}
-      
+      {% block wide_content %}
+        <div id="content">
+          {% block content %}
+            {% block news %}
+
+            {% endblock %}
+          {% endblock %}
+        </div>
       {% endblock %}
     </div>
   </div>

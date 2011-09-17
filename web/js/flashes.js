@@ -2,7 +2,7 @@ $(document).ready(function () {
   $('.flash-message').hide()
   .delay(800)
   .slideDown()
-  .delay(10000) // 10s
+  .delay(6000) // 6s
   .slideUp();
 });
 
