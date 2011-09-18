@@ -45,3 +45,24 @@ textarea
   min-height: 100px;
 }
 
+/* ========================== Search ======================= */
+
+#search form input
+{
+  width: 400px;
+  margin-left: 150px;
+  background: url('../images/search_input_background.png') no-repeat top left #0d2f4a;
+  color: #cacaca;
+  text-shadow: 0px 1px 1px #1d2f3e;
+  margin-top: 20px;
+  
+  -webkit-box-shadow: inset 0px 1px 1px #0e2d46, inset 0px -1px 1px #104c7e;
+  -moz-box-shadow: inset 0px 1px 1px #0e2d46, inset 0px -1px 1px #104c7e;
+  box-shadow: inset 0px 1px 1px #0e2d46, inset 0px -1px 1px #104c7e;
+}
+
+#search form input[type=submit], #search form button
+{
+  display: none;
+}
+

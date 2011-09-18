@@ -4,11 +4,13 @@
     <link href="{{ asset('css/main.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ asset('css/flashes.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ asset('css/blocks_infos.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('css/forms.css') }}" type="text/css" rel="stylesheet" />
 {% endblock %}
     
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('js/jquery-1.6.4.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/flashes.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/search.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -26,10 +28,16 @@
           <li><a href="{{ path('quote_list', { 'ordering': 'lastest' }) }}">lastest</a></li>
           <li><a href="{{ path('quote_list', { 'ordering': 'top' }) }}">top</a></li>
           <li><a href="{{ path('quote_list', { 'ordering': 'random' }) }}">random</a></li>
-          <li><a href="{{ path('quote_search') }}">search</a></li>
+          <li id="menu_search"><a href="#">search</a></li>
           <li><a href="{{ path('quote_new') }}">add</a></li>
         </ul>
       </div>
+      {% endblock %}
+    
+      {% block search %}
+        <div id="search">
+          {% render 'EpiquoteQuotesBundle:Search:search' %}
+        </div>
       {% endblock %}
     </div>
   </div>

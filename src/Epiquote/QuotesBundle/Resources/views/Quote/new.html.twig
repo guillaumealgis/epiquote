@@ -1,11 +1,5 @@
 {% extends '::layout.html.twig' %}
 
-{% block stylesheets %}
-  {{ parent() }}
-
-  <link href="{{ asset('css/forms.css') }}" type="text/css" rel="stylesheet" />
-{% endblock %}
-
 {% block content %}
   <form action="{{ path('quote_create') }}" method="post" {{ form_enctype(form) }}>
       {{ form_errors(form) }}

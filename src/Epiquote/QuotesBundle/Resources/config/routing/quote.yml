@@ -27,10 +27,6 @@ quote_delete:
     defaults: { _controller: "EpiquoteQuotesBundle:Quote:delete" }
     requirements: { _method: post, id: \d+ }
     
-quote_search:
-    pattern: /search
-    defaults: { _controller: "EpiquoteQuotesBundle:Quote:search" }
-    
 quote_upvote:
     pattern: /{id}/upvote
     defaults: { _controller: "EpiquoteQuotesBundle:Quote:vote", delta: 1 }
@@ -45,10 +41,7 @@ quote_downvote:
       
 quote_list:
     pattern:  /{ordering}/{page}
-    defaults:
-      _controller: "EpiquoteQuotesBundle:Quote:list"
-      ordering: lastest
-      page: 1
+    defaults: { _controller: "EpiquoteQuotesBundle:Quote:list", page: 1 }
     requirements:
       page: \d+
 

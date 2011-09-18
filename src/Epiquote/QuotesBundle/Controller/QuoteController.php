@@ -85,7 +85,7 @@ class QuoteController extends Controller
             
             $this->get('session')->setFlash('success', 'Votre quote a été enregistrée');
 
-            return $this->redirect($this->generateUrl('quote_list'));
+            return $this->redirect($this->generateUrl('epiquote_homepage'));
             
         }
 
@@ -219,10 +219,14 @@ class QuoteController extends Controller
       else
         $view = 'EpiquoteQuotesBundle:Quote:list_layout.html.twig';
       
+      $next_url = $this->generateUrl($this->get('request')->get('_route'), array(
+          'ordering' => $this->get('request')->get('ordering'),
+          'page'     => $page + 1
+      ));
+      
       return $this->render($view, array(
-          'quotes'   => $entities,
-          'ordering' => $ordering,
-          'page'     => $page
+          'quotes'        => $entities,
+          'next_page_url' => $next_url
       ));
     }
     

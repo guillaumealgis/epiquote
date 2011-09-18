@@ -1,0 +1,9 @@
+search:
+    pattern:  /
+    defaults: { _controller: "EpiquoteQuotesBundle:Search:search" }
+    
+search_results:
+    pattern: /results/{page}
+    defaults: { _controller: "EpiquoteQuotesBundle:Search:results", page: 1 }
+    requirements:
+      method: POST

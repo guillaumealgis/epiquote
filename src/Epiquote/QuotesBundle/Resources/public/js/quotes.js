@@ -30,7 +30,8 @@ $(document).ready(function () {
       type: 'GET',
       success: function (quotes) {
         var nb_quotes = $(quotes).siblings('.quote').length;
-        $(quotes).insertAfter($('.quote:last')).hide().slideDown(800);
+        if (nb_quotes > 0)
+          $(quotes).insertAfter($('.quote:last')).hide().slideDown(800);
         callback(nb_quotes < 10); // 10 is the $max_quotes_per_page value
       }
     });
@@ -51,7 +52,9 @@ $(document).ready(function () {
     // We generate the link for the next page
     var url = $('#block_more a').attr('href');
     var page = parseInt(url.substr(url.lastIndexOf('/') + 1));
-    var link = url.replace(/\/[0-9]+$/, '/' + (page + 1));
+    // This find the page number in the url
+    // (before the "?" or at the end of the url) and increment it
+    var link = url.replace(/\/[0-9]+(\?.*)?$/, '/' + (page + 1) + '$1');
     $('#block_more a').attr('href', link);
     
     // Saving last quote to remove separator later

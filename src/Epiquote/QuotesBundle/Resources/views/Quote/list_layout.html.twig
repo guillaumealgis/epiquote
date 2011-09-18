@@ -17,8 +17,7 @@
   {% include 'EpiquoteQuotesBundle:Quote:list.html.twig' with {'quotes': quotes} %}
   <div class="clear"></div>
   
-  {% if quotes | length > 0 %}
-    {{ macros.more_block(path('quote_list', { 'ordering': ordering, 'page': page + 1 }),
-        'Next page') }}  
+  {% if quotes | length == 10 %}
+    {{ macros.more_block(next_page_url, 'Next page') }}  
   {% endif %}
 {% endblock %}

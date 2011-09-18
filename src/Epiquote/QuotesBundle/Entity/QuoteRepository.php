@@ -61,4 +61,21 @@ class QuoteRepository extends EntityRepository
     
     return $qb->getQuery()->getResult();
   }
+  
+  public function findAllMatchingPattern($pattern, $page = 1, $max_quotes_per_page = 10)
+  {
+    if ($page < 0)
+      throwException (new \InvalidArgumentException ('$page cannot be negative.'));
+    
+    // We search for matching quotes
+    $qb = $this->createQueryBuilder('q')
+            ->where('q.author LIKE ?1')
+            ->orWhere('q.context LIKE ?1')
+            ->orWhere('q.content LIKE ?1')
+            ->setFirstResult(($page -  1) * $max_quotes_per_page)
+            ->setMaxResults($max_quotes_per_page)
+            ->setParameter(1, preg_replace('/\W+/', '%' , '%'.$pattern.'%'));
+    
+    return $qb->getQuery()->getResult();
+  }
 }

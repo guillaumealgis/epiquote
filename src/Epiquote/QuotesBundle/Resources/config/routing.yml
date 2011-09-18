@@ -2,3 +2,6 @@ EpiquoteQuotesBundle_quotes:
     resource: "@EpiquoteQuotesBundle/Resources/config/routing/quote.yml"
     prefix:   /quotes
 
+EpiquoteQuotesBundle_search:
+    resource: "@EpiquoteQuotesBundle/Resources/config/routing/search.yml"
+    prefix:   /search
