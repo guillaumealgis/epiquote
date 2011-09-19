@@ -9,8 +9,13 @@
 form
 {
   width: 90%;
-  margin: auto; 
+  margin: auto;
   font-size: 1.2em;
+}
+
+input, textarea, select, label
+{
+  margin-left: -10px;
 }
 
 input, textarea, select
@@ -47,10 +52,14 @@ textarea
 
 /* ========================== Search ======================= */
 
-#search form input
+#search form
 {
   width: 400px;
-  margin-left: 150px;
+  margin: auto;
+}
+
+#search form input
+{
   background: url('../images/search_input_background.png') no-repeat top left #0d2f4a;
   color: #cacaca;
   text-shadow: 0px 1px 1px #1d2f3e;
