@@ -33,6 +33,20 @@ input, textarea, select
   box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
 }
 
+input[type=submit]
+{
+  -webkit-box-shadow: inset 0px -1px 1px #a1a3a6, inset 0px 1px 1px #f5f6f8;
+  -moz-box-shadow: inset 0px -1px 1px #a1a3a6, inset 0px 1px 1px #f5f6f8;
+  box-shadow: inset 0px -1px 1px #a1a3a6, inset 0px 1px 1px #f5f6f8;
+}
+
+input[type=submit]:active
+{
+  -webkit-box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
+  -moz-box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
+  box-shadow: inset 0px 1px 1px #a1a3a6, inset 0px -1px 1px #f5f6f8;
+}
+
 form button
 {
   font-size: 0.8em;
@@ -48,6 +62,11 @@ textarea
 {
   width: 100%;
   min-height: 100px;
+}
+
+form .error
+{
+  color: #881212;
 }
 
 /* ========================== Search ======================= */

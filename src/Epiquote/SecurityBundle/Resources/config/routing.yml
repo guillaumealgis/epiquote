@@ -1,0 +1,13 @@
+login:
+    pattern:  /login
+    defaults: { _controller: EpiquoteSecurityBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+    
+logout:
+    pattern:   /logout
+    
+EpiquoteSecurityBundle_user:
+    resource: "@EpiquoteSecurityBundle/Resources/config/routing/user.yml"
+    prefix:   /user

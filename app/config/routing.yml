@@ -1,3 +1,7 @@
+EpiquoteSecurityBundle:
+    resource: "@EpiquoteSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+
 epiquote_homepage:
     pattern:  /
     defaults: { _controller: EpiquoteQuotesBundle:Quote:list, ordering: 'lastest', page: 1 }

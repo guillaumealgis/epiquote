@@ -1,0 +1,24 @@
+{% extends '::layout.html.twig' %}
+
+{% block content %}
+  <form action="{{ path('login_check') }}" method="post">
+      {% if error %}
+          <div class="error">{{ error.message }}</div><br/>
+      {% endif %}
+    
+      <div>
+        <label for="username">Email:</label><br/>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+      </div><br/>
+
+      <div>
+        <label for="password">Password:</label><br/>
+        <input type="password" id="password" name="_password" />
+      </div><br/>
+
+      <input type="hidden" name="_target_path" value="{{ redirect }}" />
+
+      <br/>
+      <input type="submit" name="login" />
+  </form>
+{% endblock %}
