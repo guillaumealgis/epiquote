@@ -1,4 +1,16 @@
-<h1>Quote edit</h1>
+{% extends '::layout.html.twig' %}
+
+{% block content %}
+<br/>
+
+<h3>Quote edition</h3><br/>
+
+<form action="{{ path('quote_delete', { 'id': entity.id }) }}" method="post">
+  {{ form_widget(delete_form) }}
+  <button type="submit">Delete this quote</button>
+</form>
+
+<br/>
 
 <form action="{{ path('quote_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     {{ form_widget(edit_form) }}
@@ -7,16 +19,6 @@
     </p>
 </form>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('quote') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('quote_delete', { 'id': entity.id }) }}" method="post">
-            {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
+<br/><br/>
+
+{% endblock %}

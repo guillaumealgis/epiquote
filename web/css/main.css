@@ -37,6 +37,16 @@ a
   text-align: center;
 }
 
+.float-left
+{
+  float: left;
+}
+
+.float-right
+{
+  float: right;
+}
+
 /* =============      Header         ================ */
 
 #header

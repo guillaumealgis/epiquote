@@ -143,6 +143,8 @@ class QuoteController extends Controller
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
+            
+            $this->get('session')->setFlash('success', 'Quote edited');
 
             return $this->redirect($this->generateUrl('quote_edit', array('id' => $id)));
         }
@@ -175,9 +177,11 @@ class QuoteController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            
+            $this->get('session')->setFlash('success', 'Quote #' . $id . ' deleted successfully.');
         }
 
-        return $this->redirect($this->generateUrl('quote'));
+        return $this->redirect($this->generateUrl('epiquote_homepage'));
     }
 
     private function createDeleteForm($id)
