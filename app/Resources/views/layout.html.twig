@@ -85,5 +85,13 @@
     </div>
   </div>
   {% endblock %}
+    
+  {% block footer %}
+    <div id="footer">
+      <a href="{{ path('pages_legal') }}">Informations légales</a> | 
+      <a href="{{ path('pages_about') }}">A propos</a><!-- | 
+      <a href="{{ path('pages_mobile') }}">Mobile</a>-->
+    </div>
+  {% endblock %}
 
 {% endblock %}

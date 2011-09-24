@@ -1,10 +1,14 @@
-EpiquoteSecurityBundle:
-    resource: "@EpiquoteSecurityBundle/Resources/config/routing.yml"
-    prefix:   /
-
 epiquote_homepage:
     pattern:  /
     defaults: { _controller: EpiquoteQuotesBundle:Default:index }
+    
+EpiquotePagesBundle:
+    resource: "@EpiquotePagesBundle/Resources/config/routing.yml"
+    prefix:   /pages/
+
+EpiquoteSecurityBundle:
+    resource: "@EpiquoteSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
 
 EpiquoteQuotesBundle:
     resource: "@EpiquoteQuotesBundle/Resources/config/routing.yml"
