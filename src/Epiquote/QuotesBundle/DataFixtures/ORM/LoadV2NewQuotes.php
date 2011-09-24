@@ -33,7 +33,7 @@ class LoadV2NewQuotes implements FixtureInterface
             array
                 (
                     'author' => 'M. Marwan Burelle',
-                    'context' => 'Dans une news concernant les Ing1 (à ce moment là en piscine) souhaitant être AOC.',
+                    'context' => 'Dans une news concernant les Ing1, en piscine à ce moment là .',
                     'content' => 'En attendant, nagez bien dans les memory-pools, utilisez vos pointeurs
 pour floater et veuillez au moins sourire aux blagues pourries de
 votre dévoué serviteur.',
