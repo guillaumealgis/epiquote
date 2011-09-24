@@ -64,7 +64,7 @@ a
 
 #logo
 {
-  width: 275px; /* 245px + 30px */
+  width: 285px; /* 245px + 40px */
   margin: auto;
   padding-top: 60px;
 }
@@ -107,16 +107,28 @@ a
 {
   width: 100%;
   height: 90px;
-  background: url('../images/search_background.png') no-repeat top center #102f4a;
 }
 
 /* see forms.css for search related forms elements style */
+
+/* =======================    Indicator     ========================= */
+
+#menu_indicator
+{
+  width: 500px;
+  height: 10px;
+  margin: auto;
+  position: relative;
+  top: 1px;
+  /* Indicator is hidden in the left of the block by default */
+  background: url('../images/menu_indicator.png') no-repeat -20px;
+}
 
 /* =======================    Sheet     ========================= */
 
 #sheet
 {
-  border-top: 1px solid white;
+  border-top: 1px solid #eaeaea;
   padding: 30px 0;
   color: #686868;
   text-shadow: 0px 1px 1px #FFF;
