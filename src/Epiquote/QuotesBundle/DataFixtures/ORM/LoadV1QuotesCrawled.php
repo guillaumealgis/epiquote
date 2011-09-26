@@ -5,10 +5,13 @@ namespace Epiquote\QuotesBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Epiquote\QuotesBundle\Entity\Quote;
 
-class LoadV1Quotes implements FixtureInterface
+class LoadV1QuotesCrawled implements FixtureInterface
 {
     public function load($manager)
     {
+        // Deactivated as theses quotes are now included in the LoadV1Nguyen.php fixture
+        return;
+      
         foreach ($this->getQuotesArray() as $quote)
         {
             $q = new Quote();
