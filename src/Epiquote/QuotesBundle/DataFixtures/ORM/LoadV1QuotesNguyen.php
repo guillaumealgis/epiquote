@@ -555,7 +555,7 @@ class LoadV1QuotesNguyen implements FixtureInterface
               'id' => '66',
               'rank' => '53',
               'author' => 'M. Christophe Boullay',
-              'context' => 'Re-entrant dans la sale de cours après avoir demandé gentiment à des hystériques isbpettes de se taire.',
+              'context' => 'Re-entrant dans la salle de cours après avoir demandé gentiment à des hystériques isbpettes de se taire.',
               'content' => 'Y\'a de quoi devenir pédé.',
             ),
             array
