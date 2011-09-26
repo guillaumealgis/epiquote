@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Epiquote\QuotesBundle\EpiquoteQuotesBundle(),
             new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
             new Epiquote\SecurityBundle\EpiquoteSecurityBundle(),
+            new Epiquote\PagesBundle\EpiquotePagesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

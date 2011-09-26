@@ -1,0 +1,11 @@
+pages_legal:
+    pattern:  /legal
+    defaults: { _controller: EpiquotePagesBundle:Pages:legal }
+
+pages_about:
+    pattern:  /about
+    defaults: { _controller: EpiquotePagesBundle:Pages:about }
+    
+pages_mobile:
+    pattern:  /mobile
+    defaults: { _controller: EpiquotePagesBundle:Pages:mobile }

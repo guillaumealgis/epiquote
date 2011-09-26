@@ -64,7 +64,7 @@ a
 
 #logo
 {
-  width: 275px; /* 245px + 30px */
+  width: 285px; /* 245px + 40px */
   margin: auto;
   padding-top: 60px;
 }
@@ -107,16 +107,28 @@ a
 {
   width: 100%;
   height: 90px;
-  background: url('../images/search_background.png') no-repeat top center #102f4a;
 }
 
 /* see forms.css for search related forms elements style */
+
+/* =======================    Indicator     ========================= */
+
+#menu_indicator
+{
+  width: 500px;
+  height: 10px;
+  margin: auto;
+  position: relative;
+  top: 1px;
+  /* Indicator is hidden in the left of the block by default */
+  background: url('../images/menu_indicator.png') no-repeat -20px;
+}
 
 /* =======================    Sheet     ========================= */
 
 #sheet
 {
-  border-top: 1px solid white;
+  border-top: 1px solid #eaeaea;
   padding: 30px 0;
   color: #686868;
   text-shadow: 0px 1px 1px #FFF;
@@ -132,4 +144,50 @@ a
 {
   width: 500px;
   margin: auto;
+}
+
+#content p
+{
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+#content a
+{
+  color: #507b89;
+  
+  -webkit-transition: color 300ms linear;
+  -moz-transition: color 300ms linear;
+  -o-transition: color 300ms linear;
+  transition: color 300ms linear;
+}
+
+#content a:hover
+{
+  color: #3d88e5;
+  text-decoration: none;
+}
+
+/* =======================    Footer     ========================= */
+
+#footer
+{
+  width: 500px;
+  margin: auto;
+  color: #a0a0a0;
+  text-shadow: 0px 1px 1px #FFF;
+  text-align: center;
+}
+
+#footer a
+{
+  -webkit-transition: color 300ms linear;
+  -moz-transition: color 300ms linear;
+  -o-transition: color 300ms linear;
+  transition: color 300ms linear;  
+}
+
+#footer a:hover
+{
+  color: #626262;
 }

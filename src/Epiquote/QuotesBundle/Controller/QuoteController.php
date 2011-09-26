@@ -63,7 +63,8 @@ class QuoteController extends Controller
 
         return $this->render('EpiquoteQuotesBundle:Quote:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView()
+            'form'   => $form->createView(),
+            'indicator_position' => 445,
         ));
     }
 
@@ -205,12 +206,15 @@ class QuoteController extends Controller
       {
         case 'lastest':
           $entities = $repo->findLastests($page);
+          $indic_pos = 43;
           break;
         case 'top':
           $entities = $repo->findBestRateds($page);
+          $indic_pos = 137;
           break;
         case 'random':
           $entities = $repo->findRandoms($page);
+          $indic_pos = 236;
           break;
 
         default:
@@ -229,8 +233,9 @@ class QuoteController extends Controller
       ));
       
       return $this->render($view, array(
-          'quotes'        => $entities,
-          'next_page_url' => $next_url
+          'quotes'             => $entities,
+          'next_page_url'      => $next_url,
+          'indicator_position' => $indic_pos,
       ));
     }
     

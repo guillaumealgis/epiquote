@@ -39,6 +39,12 @@
           {% render 'EpiquoteQuotesBundle:Search:search' %}
         </div>
       {% endblock %}
+    
+      {% block menu_indicator %}
+        {% if indicator_position is defined %}
+          <div id="menu_indicator" style="background-position: {{ indicator_position }}px;"></div>
+        {% endif %}
+      {% endblock %}
     </div>
   </div>
   {% endblock %}
@@ -78,6 +84,14 @@
       {% endblock %}
     </div>
   </div>
+  {% endblock %}
+    
+  {% block footer %}
+    <div id="footer">
+      <a href="{{ path('pages_legal') }}">Informations légales</a> | 
+      <a href="{{ path('pages_about') }}">A propos</a><!-- | 
+      <a href="{{ path('pages_mobile') }}">Mobile</a>-->
+    </div>
   {% endblock %}
 
 {% endblock %}
