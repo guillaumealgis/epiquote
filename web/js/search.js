@@ -7,21 +7,29 @@ $(document).ready(function () {
     event.preventDefault();
     
     $('#search').slideToggle(500);
-    if ($('#search').height() <= 1)
+    // If the indicator isn't present on this pagem do nothing with it
+    if ($('#menu_indicator').length > 0)
     {
-      // This save the horizontal background position of the indicator
-      slider_pos = $('#menu_indicator').css('background-position');
-      slider_pos = slider_pos.substr(0, slider_pos.indexOf(' '));
-      $('#menu_indicator').animate({
-        'background-position': '350px'
-      }, 500);
-      $('#search input').focus();
-    }
-    else
-    {
-      $('#menu_indicator').animate({
-        'background-position': slider_pos
-      }, 500);
+      // If the search panel is not open
+      if ($('#search').height() <= 1)
+      {
+        // This saves the horizontal background position of the indicator
+        slider_pos = $('#menu_indicator').css('background-position');
+        slider_pos = slider_pos.substr(0, slider_pos.indexOf(' '));
+        // We slide the indicator to the "search" position
+        $('#menu_indicator').animate({
+          'background-position': '350px'
+        }, 500);
+        $('#search input').focus();
+      }
+      else
+      {
+        // When closing the search panel we slide the indicator back to
+        // its original position
+        $('#menu_indicator').animate({
+          'background-position': slider_pos
+        }, 500);
+      }
     }
   });
 });
