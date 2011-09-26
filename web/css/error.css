@@ -1,0 +1,27 @@
+/* 
+    Document   : error.css
+    Created on : 26 sept. 2011, 23:49:54
+    Author     : guillaume
+    Description:
+        CSS for customizing error pages
+*/
+
+
+#error_beast_msg
+{
+  position: relative;
+  top: -95px;
+  left: 5px;
+  
+  font-family: Mistral, "Comic Sans MS", Brushstroke, fantasy;
+  font-size: 0.8em;
+  text-align: center;
+  color: black;
+  text-shadow: none;
+}
+
+#error_beast_msg #code
+{
+  font-size: 1.2em;
+  font-weight: bold;
+}
