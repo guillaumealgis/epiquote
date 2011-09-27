@@ -1,0 +1,7 @@
+syndication_rss:
+    pattern:  /rss
+    defaults: { _controller: "EpiquoteQuotesBundle:Syndication:rss" }
+
+syndication_atom:
+    pattern:  /atom
+    defaults: { _controller: "EpiquoteQuotesBundle:Syndication:atom" }

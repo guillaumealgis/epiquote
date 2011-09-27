@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Flux RSS Epiquote.fr</title>
+        <description>Les dernières quotes d'Epiquote.fr</description>
+        <link>http://www.epiquote.fr</link>
+        {% for quote in quotes %}
+        <item>
+            <title>Quote #{{ quote.id }}</title>
+            <description>{{ quote.author }}: (Contexte: {{ quote.context }}) "{{ quote.content }}"</description>
+            <pubDate>{{ quote.createdAt | date('D, d M Y H:i:s O') }}</pubDate>
+            <link>{{ url('quote_show', {'id': quote.id}) }}</link>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Flux Atom Epiquote.fr</title>
+  <subtitle>Les dernières quotes d'Epiquote.fr</subtitle>
+  <link href="http://www.epiquote.fr"/>
+  <updated>2011-09-27T21:57:02+02:00</updated>
+  <author>
+    <name>Guillaume Algis</name>
+    <email>admin@epiquote.fr</email>
+  </author>
+  <id>{{ app_uuid }}</id>
+
+  {% for quote in quotes %}
+  <entry>
+    <title>Quote #{{ quote.id }}</title>
+    <link href="{{ url('quote_show', {'id': quote.id}) }}"/>
+    <id>{{ uuids[loop.index - 1] }}</id>
+    <updated>{{ quote.createdAt | date('Y-m-d\\TH:i:s\\Z') }}</updated>
+    <summary>{{ quote.author }}: (Contexte: {{ quote.context }}) "{{ quote.content }}"</summary>
+  </entry>
+  {% endfor %}
+</feed>

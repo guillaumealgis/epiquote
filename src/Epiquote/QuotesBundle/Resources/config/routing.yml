@@ -5,3 +5,7 @@ EpiquoteQuotesBundle_quotes:
 EpiquoteQuotesBundle_search:
     resource: "@EpiquoteQuotesBundle/Resources/config/routing/search.yml"
     prefix:   /search
+    
+EpiquoteQuotesBundle_syndication:
+    resource: "@EpiquoteQuotesBundle/Resources/config/routing/syndication.yml"
+    prefix:   /syndication
