@@ -1,4 +1,4 @@
-{% if loop.last %}
+{% if not loop is defined or loop.last %}
   <div class="quote no-separator">
 {% else %}
   <div class="quote">  

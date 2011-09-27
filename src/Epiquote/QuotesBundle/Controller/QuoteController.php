@@ -46,7 +46,7 @@ class QuoteController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('EpiquoteQuotesBundle:Quote:show.html.twig', array(
-            'entity'      => $entity,
+            'quote'       => $entity,
             'delete_form' => $deleteForm->createView(),
 
         ));
