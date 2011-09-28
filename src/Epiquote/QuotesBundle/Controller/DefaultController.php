@@ -21,7 +21,7 @@ class DefaultController extends Controller
       $this->get('session')->setFlash('error', $this->get('session')->getFlash('error'));
     
     return $this->redirect($this->generateUrl('quote_list', array(
-        'ordering' => 'lastest',
+        'ordering' => 'latest',
         'page'     => '1',
     )));
   }

@@ -196,7 +196,7 @@ class QuoteController extends Controller
     }
     
     /**
-     * Show a list of quotes, ordered by [lastest | top rated | random] and paginated
+     * Show a list of quotes, ordered by [latest | top rated | random] and paginated
      */
     public function listAction($ordering, $page)
     {
@@ -206,7 +206,7 @@ class QuoteController extends Controller
       $entities = array();
       switch ($ordering)
       {
-        case 'lastest':
+        case 'latest':
           $entities = $repo->findLastests($page);
           $indic_pos = 43;
           break;
