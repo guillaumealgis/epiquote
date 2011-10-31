@@ -1,24 +1,7 @@
-{% if not loop is defined or loop.last %}
-  <div class="quote no-separator">
-{% else %}
-  <div class="quote">  
-{% endif %}
-      <div class="quote_rank">
-        <p>
-          <a class="rate_symbols" href="{{ path('quote_downvote', { 'id': quote.id }) }}">-</a>
-          &nbsp;{{ quote.rank }}&nbsp;
-          <a class="rate_symbols" href="{{ path('quote_upvote', { 'id': quote.id }) }}">+</a>
-        </p>
-      </div>
-      <div class="quote_body">
-        <p class="quote_author">{{quote.author}}</p>
-        <br />
-        <p>
-          {% if quote.context %}
-            <span class="quote_context">Contexte: {{quote.context | raw }}</span>
-            <br />
-          {% endif %}
-          <span class="quote_content">{{ quote.content | raw }}</span>
-        </p>
-      </div>
-    </div>
+<div class="content quote">
+  <h5 class="quote_author">{{quote.author}}</h5>
+  {% if quote.context %}
+    <p class="quote_context">Contexte: {{quote.context | raw }}</p>
+  {% endif %}
+    <br/><p class="quote_content">{{ quote.content | raw }}</p>
+</div>

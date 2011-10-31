@@ -16,8 +16,9 @@
 
 body
 {
-  font-family: Georgia, Norasi, serif;
-  background: url('../images/sheet_background.png') repeat #dde0e4;
+  font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 12px;
+  background: #fafafa;
 }
 
 a
@@ -49,146 +50,76 @@ a
 
 /* =============      Header         ================ */
 
-#header
+header
 {
-  background: url('../images/header_background.png') repeat-x #0e3555;
-}
-
-#header_content
-{
-  width: 800px;
-  height: 100%;
+  width: 750px;
+  height: 100px;
   margin: auto;
-  background: url('../images/logo_background.png') no-repeat #0e3555;
 }
 
-#logo
+div
 {
-  width: 285px; /* 245px + 40px */
-  margin: auto;
-  padding-top: 60px;
+  
+  padding: 0;
+  margin: 0;
 }
 
-#header_menu
+h1#logo
 {
-  width: 500px;
-  height: 40px;
-  margin: auto;
-  padding-top: 30px;
-}
-
-#header_menu ul li
-{
-  padding: 0 30px;
+  padding: 0;
+  margin: 0;
+  font-family: 'Droid Serif', serif;
+  font-size: 48px;
+  line-height: 39px;
+  height: 48px;
+  color: #3797d7;
+  margin-top: 26px;
   float: left;
-  list-style: none;
 }
 
-#header_menu ul li a
+header div#ordering
 {
-  text-align: center;
-  color: #cdcdcd;
-  text-shadow: 0px 1px 1px #000;
+  margin-top: 42px;
+  float: right;
+}
+
+/* =======================    Page     ========================= */
+
+#page
+{
+  width: 750px;
+  min-height: 200px;
+  margin: auto;
+  border: 1px solid #e0e0e0;
   
-  -webkit-transition: color 300ms linear;
-  -moz-transition: color 300ms linear;
-  -o-transition: color 300ms linear;
-  transition: color 300ms linear;
+  -webkit-box-shadow: 0px 0px 7px -2px #b0b0b0;
+  -moz-box-shadow: 0px 0px 7px -2px #b0b0b0;
+  box-shadow: 0px 0px 7px -2px #b0b0b0;
 }
 
-#header_menu ul li a:hover
+.content
 {
-  color: white;
-}
-
-/* =======================    Search     ========================= */
-
-#search
-{
-  width: 100%;
-  height: 90px;
-}
-
-/* see forms.css for search related forms elements style */
-
-/* =======================    Indicator     ========================= */
-
-#menu_indicator
-{
-  width: 500px;
-  height: 10px;
-  margin: auto;
-  position: relative;
-  top: 1px;
-  /* Indicator is hidden in the left of the block by default */
-  background: url('../images/menu_indicator.png') no-repeat -20px;
-}
-
-/* =======================    Sheet     ========================= */
-
-#sheet
-{
-  border-top: 1px solid #eaeaea;
-  padding: 30px 0;
-  color: #686868;
-  text-shadow: 0px 1px 1px #FFF;
-}
-
-#wide_content
-{
-  width: 800px;
-  margin: auto;
-}
-
-#content
-{
-  width: 500px;
-  margin: auto;
-}
-
-#content p
-{
-  text-align: justify;
-  line-height: 1.5em;
-}
-
-#content a
-{
-  color: #507b89;
-  
-  -webkit-transition: color 300ms linear;
-  -moz-transition: color 300ms linear;
-  -o-transition: color 300ms linear;
-  transition: color 300ms linear;
-}
-
-#content a:hover
-{
-  color: #3d88e5;
-  text-decoration: none;
+  width: 700px; /* 750px - 2 * 25px */
+  padding: 25px;
+  border-bottom: 1px solid #d6d6d6;
 }
 
 /* =======================    Footer     ========================= */
 
-#footer
+footer
 {
-  width: 500px;
+  width: 750px;
   margin: auto;
-  margin-bottom: 30px;
-  color: #a0a0a0;
-  text-shadow: 0px 1px 1px #FFF;
-  text-align: center;
+  background: #fafafa;
+  color: #a5a5a5;
 }
 
-#footer a
+footer > div:first-child
 {
-  -webkit-transition: color 300ms linear;
-  -moz-transition: color 300ms linear;
-  -o-transition: color 300ms linear;
-  transition: color 300ms linear;  
+  float: left;
 }
 
-#footer a:hover
+footer > div:last-child
 {
-  color: #626262;
+  float: right;
 }

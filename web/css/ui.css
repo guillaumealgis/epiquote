@@ -1,0 +1,186 @@
+/* 
+    Document   : ui.css
+    Created on : 29 oct. 2011, 20:57:47
+    Author     : Guillaume Algis
+    Description:
+        Define css rules for ::ui.html.twig macros
+*/
+
+/* =======================    Button     ========================= */
+
+.ui-button
+{
+  padding: 6px 20px;
+  
+  font-weight: bold;
+  color: #6c6c6c;
+  
+  border: 1px solid #dcdcdc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  
+  background: #f5f5f5;
+  background: -moz-linear-gradient(top, #f5f5f5 0%, #f1f1f1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#f1f1f1));
+  background: -webkit-linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  background: -o-linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  background: -ms-linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  background: linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+}
+
+.ui-button:hover
+{
+  color: #474747;
+  
+  border: 1px solid #b3b3b3;
+  -webkit-box-shadow: 0px 1px 3px -1px #b3b3b3;
+  -moz-box-shadow: 0px 1px 3px -1px #b3b3b3;
+  box-shadow: 0px 1px 3px -1px #b3b3b3;
+  
+  background: #fafafa;
+  background: -moz-linear-gradient(top, #fafafa 0%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#ededed));
+  background: -webkit-linear-gradient(top, #fafafa 0%,#ededed 100%);
+  background: -o-linear-gradient(top, #fafafa 0%,#ededed 100%);
+  background: -ms-linear-gradient(top, #fafafa 0%,#ededed 100%);
+  background: linear-gradient(top, #fafafa 0%,#ededed 100%);
+}
+
+.ui-button:active
+{
+  -webkit-box-shadow: inset 0px 1px 3px -1px #b3b3b3;
+  -moz-box-shadow: inset 0px 1px 3px -1px #b3b3b3;
+  box-shadow: inset 0px 1px 3px -1px #b3b3b3;
+}
+
+/* ===================    Button color variations     ===================== */
+
+/* -- Blue -- */
+
+.ui-button.blue
+{
+  color: white;
+  text-shadow: 0px 1px 1px #255777;
+  
+  border: 1px solid #287bb2;
+  
+  background: #399cdd;
+  background: -moz-linear-gradient(top, #399cdd 0%, #3693d1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#399cdd), color-stop(100%,#3693d1));
+  background: -webkit-linear-gradient(top, #399cdd 0%,#3693d1 100%);
+  background: -o-linear-gradient(top, #399cdd 0%,#3693d1 100%);
+  background: -ms-linear-gradient(top, #399cdd 0%,#3693d1 100%);
+  background: linear-gradient(top, #399cdd 0%,#3693d1 100%);
+}
+
+.ui-button.blue:hover
+{
+  color: #f8f8f8;
+  text-shadow: 0px 1px 1px #255777;
+  
+  border: 1px solid #1f6ca0;
+  -webkit-box-shadow: 0px 1px 5px -1px #b3b3b3;
+  -moz-box-shadow: 0px 1px 5px -1px #b3b3b3;
+  box-shadow: 0px 1px 5px -1px #b3b3b3;
+  
+  background: #42a3e3;
+  background: -moz-linear-gradient(top, #42a3e3 0%, #308cca 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#42a3e3), color-stop(100%,#308cca));
+  background: -webkit-linear-gradient(top, #42a3e3 0%,#308cca 100%);
+  background: -o-linear-gradient(top, #42a3e3 0%,#308cca 100%);
+  background: -ms-linear-gradient(top, #42a3e3 0%,#308cca 100%);
+  background: linear-gradient(top, #42a3e3 0%,#308cca 100%);
+}
+
+.ui-button.blue:active
+{ 
+  -webkit-box-shadow: inset 0px 1px 6px -1px #216c9e;
+  -moz-box-shadow: inset 0px 1px 6px -1px #216c9e;
+  box-shadow: inset 0px 1px 6px -1px #216c9e;
+}
+
+/* ====================    Button mutiple choices     ===================== */
+
+.ui-multiple-buttons
+{
+  display: inline;
+  list-style: none;
+}
+
+.ui-multiple-buttons li
+{
+  position: relative;
+  z-index: 1;
+  display: inline;
+}
+
+.ui-multiple-buttons li a
+{
+  margin-left: -1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.ui-multiple-buttons li:hover
+{
+  z-index: 20;
+}
+
+.ui-multiple-buttons:first-child a
+{
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 2px;
+  -webkit-border-radius: 2px 0px 0px 2px;
+  border-radius: 2px 0px 0px 2px;
+}
+
+.ui-multiple-buttons:last-child a
+{
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-radius: 0px 2px 2px 0px;
+  border-radius: 0px 2px 2px 0px;
+}
+
+.ui-multiple-buttons li.selected
+{
+  z-index: 10;
+}
+
+.ui-multiple-buttons li.selected a
+{  
+  color: #474747;
+  
+  border: 1px solid #bbbbbb;
+  -webkit-box-shadow: inset 0px 0px 8px 0px #bababa;
+  -moz-box-shadow: inset 0px 0px 8px 0px #bababa;
+  box-shadow: inset 0px 0px 8px 0px #bababa;
+  
+  background: #ededed;
+  background: -moz-linear-gradient(top, #ededed 0%, #e1e1e1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#e1e1e1));
+  background: -webkit-linear-gradient(top, #ededed 0%,#e1e1e1 100%);
+  background: -o-linear-gradient(top, #ededed 0%,#e1e1e1 100%);
+  background: -ms-linear-gradient(top, #ededed 0%,#e1e1e1 100%);
+  background: linear-gradient(top, #ededed 0%,#e1e1e1 100%);
+}
+
+.ui-multiple-buttons li.selected a:hover
+{  
+  -webkit-box-shadow: 0px 1px 3px -1px #b3b3b3;
+  -moz-box-shadow: 0px 1px 3px -1px #b3b3b3;
+  box-shadow: 0px 1px 3px -1px #b3b3b3;
+}
+
+.ui-multiple-buttons li.selected a:active
+{  
+  -webkit-box-shadow: inset 0px 0px 8px 0px #9e9e9e;
+  -moz-box-shadow: inset 0px 0px 8px 0px #9e9e9e;
+  box-shadow: inset 0px 0px 8px 0px #9e9e9e;
+}

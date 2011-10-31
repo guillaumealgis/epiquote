@@ -1,97 +1,67 @@
 {% extends '::base.html.twig' %}
 
+{% import '::ui.html.twig' as ui %}
+{% macro clearer() %}
+  <div class="clear"></div>
+{% endmacro %}
+
 {% block stylesheets %}
-    <link href="{{ asset('css/main.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('css/flashes.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('css/blocks_infos.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('css/forms.css') }}" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css' />
+  <link href="{{ asset('css/main.css') }}" type="text/css" rel="stylesheet" />
+  <link href="{{ asset('css/ui.css') }}" type="text/css" rel="stylesheet" />
 {% endblock %}
     
 {% block javascripts %}
-    <script type="text/javascript" src="{{ asset('js/jquery-1.6.4.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/flashes.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/search.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery-1.6.4.min.js') }}"></script>
 {% endblock %}
 
 {% block body %}
   {% block header %}
-  <div id="header">
-    <div id="header_content">
-      <h1 id="logo">
-        <img src="{{ asset('images/logo_epiquote.png') }}" alt="epiquote" />
-      </h1>
+    <header>
+      <h1 id="logo">epiquote</h1>
       
-      
-      {% block header_menu %}
-      <div id="header_menu">
-        <ul>
-          <li><a href="{{ path('quote_list', { 'ordering': 'latest' }) }}">latest</a></li>
-          <li><a href="{{ path('quote_list', { 'ordering': 'top' }) }}">top</a></li>
-          <li><a href="{{ path('quote_list', { 'ordering': 'random' }) }}">random</a></li>
-          <li id="menu_search"><a href="#">search</a></li>
-          <li><a href="{{ path('quote_new') }}">add</a></li>
-        </ul>
+      <div id="ordering">
+        {{ ui.button_multiple({"Dernières": "#",
+                               "Top": "#",
+                               "Au hasard": "#"}, 1)
+        }}
       </div>
-      {% endblock %}
-    
-      {% block search %}
-        <div id="search">
-          {% render 'EpiquoteQuotesBundle:Search:search' %}
-        </div>
-      {% endblock %}
-    
-      {% block menu_indicator %}
-        {% if indicator_position is defined %}
-          <div id="menu_indicator" style="background-position: {{ indicator_position }}px;"></div>
-        {% endif %}
-      {% endblock %}
-    </div>
-  </div>
+    </header>
   {% endblock %}
-  
-  {% block sheet %}
-  <div id="sheet">
-    {% block flash %}
-      {% if app.session.hasFlash('success') %}
-        <div class="flash-message flash-success">
-          {{ app.session.flash('success') }}
-        </div>
-      {% endif %}
-
-      {% if app.session.hasFlash('notice') %}
-        <div class="flash-message flash-notice">
-          {{ app.session.flash('notice') }}
-        </div>
-      {% endif %}
-
-      {% if app.session.hasFlash('error') %}
-        <div class="flash-message flash-error">
-          {{ app.session.flash('error') }}
-        </div>
-      {% endif %}
-    {% endblock %}
     
-    <div id="wide_content">      
-      
-      {% block wide_content %}
-        <div id="content">
-          {% block content %}
-            {% block news %}
-
-            {% endblock %}
-          {% endblock %}
+  {% block page %}
+    <div id="page">
+      {% block add_search %}
+        <div class="content" id="add-search">
+          {{ ui.button("Nouvelle quote", "#") }}&nbsp;
+          {{ ui.button("Nouvelle quote", "#", "blue") }}
+          
+          <!--<br/><br/><br/>
+          
+          <form action="#" method="post">
+            <input type="text" name="search" />
+            <input type="submit" />
+          </form>-->
         </div>
       {% endblock %}
+      
+      {% block content %}
+      
+      {% endblock %}
     </div>
-  </div>
   {% endblock %}
     
   {% block footer %}
-    <div id="footer">
-      <a href="{{ path('pages_legal') }}">Informations légales</a> | 
-      <a href="{{ path('pages_about') }}">A propos</a><!-- | 
-      <a href="{{ path('pages_mobile') }}">Mobile</a>-->
-    </div>
+    <footer>
+      <div>
+        Copyright (c) Epiquote 2011
+      </div>
+      <div>
+        <a href="#">Informations légales</a>
+        &nbsp;|&nbsp;
+        <a href="#">A propos</a>
+      </div>
+      {{ _self.clearer() }}
+    </footer>
   {% endblock %}
-
 {% endblock %}

@@ -8,62 +8,21 @@
 
 .quote
 {
-  float: left;
-  text-shadow: 0px 1px 1px #FFF;
+  line-height: 1.5em;
 }
 
-.quote_rank
+h5.quote_author
 {
-  width: 155px;
-  float: left;
-  color: #a0a0a0;
-  font-size: 1.5em;
-  text-align: center;
-  margin-top: 65px;
-  cursor: default;
-}
-
-.quote_rank .rate_symbols
-{
-  color: inherit;
-  /* We use monospace font to have the same space on each size of the rank */
-  font-family: monospace;
-  
-  -webkit-transition: color 300ms linear;
-  -moz-transition: color 300ms linear;
-  -o-transition: color 300ms linear;
-  transition: color 300ms linear;
-}
-
-.quote_rank .rate_symbols:hover
-{
-  color: #c7c7c7;
-}
-
-.quote_body
-{
-  width: 500px;
-  float: left;
-  padding: 50px 0 60px 0;
-  background: url('../images/quotes_separator.png') no-repeat bottom center;
-}
-
-.quote[class~=no-separator] .quote_body
-{
-  background: none;
-}
-
-.quote_author
-{
-  color: #5d7ca3;
+  font-size: 1em;
+  color: #3484c3;
 }
 
 .quote_context
 {
-  color: #7f7f7f;
+  color: #727171;
 }
 
 .quote_content
 {
-  color: #3d3c3c;
+  color: #222222;
 }
