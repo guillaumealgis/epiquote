@@ -1,9 +1,7 @@
 {% extends '::base.html.twig' %}
 
+{% import '::utils.html.twig' as utils %}
 {% import '::ui.html.twig' as ui %}
-{% macro clearer() %}
-  <div class="clear"></div>
-{% endmacro %}
 
 {% block stylesheets %}
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css' />
@@ -18,12 +16,14 @@
 {% block body %}
   {% block header %}
     <header>
-      <h1 id="logo">epiquote</h1>
+      <h1 id="logo"><a href="{{ path('quote_list', {'ordering': 'latest'}) }}">epiquote</a></h1>
       
       <div id="ordering">
-        {{ ui.button_multiple({"Dernières": "#",
-                               "Top": "#",
-                               "Au hasard": "#"}, 1)
+        {% set orderings = {'': 0, 'latest': 1, 'top': 2, 'random': 3} %}
+        {{ ui.button_multiple({"Dernières": path('quote_list', {'ordering': 'latest'}),
+                               "Top":       path('quote_list', {'ordering': 'top'}),
+                               "Au hasard": path('quote_list', {'ordering': 'random'})},
+                                orderings[app.request.get('ordering')])
         }}
       </div>
     </header>
@@ -33,15 +33,13 @@
     <div id="page">
       {% block add_search %}
         <div class="content" id="add-search">
-          {{ ui.button("Nouvelle quote", "#") }}&nbsp;
-          {{ ui.button("Nouvelle quote", "#", "blue") }}
+          {{ ui.button("Nouvelle quote", path('quote_new'), ["blue", "float-left"]) }}
           
-          <!--<br/><br/><br/>
-          
-          <form action="#" method="post">
-            <input type="text" name="search" />
-            <input type="submit" />
-          </form>-->
+          <div class="float-right">
+            {% render "EpiquoteQuotesBundle:Search:search" %}
+          </div>
+              
+          {{ utils.clearer() }}
         </div>
       {% endblock %}
       
@@ -53,15 +51,15 @@
     
   {% block footer %}
     <footer>
-      <div>
+      <div id="footer_left">
         Copyright (c) Epiquote 2011
       </div>
-      <div>
-        <a href="#">Informations légales</a>
+      <div id="footer_right">
+        <a href="{{ path('pages_legal') }}">Informations légales</a>
         &nbsp;|&nbsp;
-        <a href="#">A propos</a>
+        <a href="{{ path('pages_about') }}">A propos</a>
       </div>
-      {{ _self.clearer() }}
+      {{ utils.clearer() }}
     </footer>
   {% endblock %}
 {% endblock %}

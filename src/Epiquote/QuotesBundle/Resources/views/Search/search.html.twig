@@ -1,13 +1,9 @@
 <form action="{{ path('search_results') }}" method="get" {{ form_enctype(form) }}>
-      {{ form_errors(form) }}
+  {{ form_errors(form) }}
 
-      <div>
-          {{ form_errors(form.pattern) }}
-          {{ form_widget(form.pattern) }}
-      </div>
+  {{ form_errors(form.pattern) }}
+  {{ form_widget(form.pattern, {'attr': {'size': '60'}}) }}
 
-      {{ form_rest(form) }}
-      <p>
-          <button type="submit">Rechercher</button>
-      </p>
-  </form>
+  {{ form_rest(form) }}
+  <input type="submit" value="Rechercher" />
+</form>

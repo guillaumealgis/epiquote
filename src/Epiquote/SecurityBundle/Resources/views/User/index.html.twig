@@ -1,43 +1,63 @@
-<h1>User list</h1>
+{% extends '::layout.html.twig' %}
 
-<table class="records_list">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Salt</th>
-            <th>Roles</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for entity in entities %}
-        <tr>
-            <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-            <td>{{ entity.username }}</td>
-            <td>{{ entity.password }}</td>
-            <td>{{ entity.salt }}</td>
-            <td>{{ entity.roles }}</td>
-            <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('user_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('user_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+{% block stylesheets %}
+  {{ parent() }}
 
-<ul>
-    <li>
-        <a href="{{ path('user_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
+  <link href="{{ asset('css/forms.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+
+  <script src="{{ asset('js/forms.js') }}" type="text/javascript" />
+{% endblock %}
+
+{% block content %}
+
+<div class="content">
+  <h2>User list</h2>
+</div>
+
+<div class="content">
+  <table class="records_list">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Salt</th>
+              <th>Roles</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+      {% for entity in entities %}
+          <tr>
+              <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+              <td>{{ entity.username }}</td>
+              <td>{{ entity.password | truncate(30) }}</td>
+              <td>{{ entity.salt | truncate(20) }}</td>
+              <td>{{ entity.roles | join(', ') }}</td>
+              <td>
+                  <ul>
+                      <li>
+                          <a href="{{ path('user_show', { 'id': entity.id }) }}">show</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('user_edit', { 'id': entity.id }) }}">edit</a>
+                      </li>
+                  </ul>
+              </td>
+          </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+</div>
+  
+<div class="content">
+  <a class="ui-button" href="{{ path('user_new') }}">
+      Create a new entry
+  </a>
+</div>
+  
+{% endblock %}

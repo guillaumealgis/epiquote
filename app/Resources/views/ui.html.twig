@@ -1,5 +1,5 @@
-{% macro button(text, href, color) %}
-  <a href="{{ href }}" class="ui-button {{ color }}">
+{% macro button(text, href, classes) %}
+  <a href="{{ href }}" class="ui-button {{ classes | join(' ') }}">
     {{ text }}
   </a>
 {% endmacro %}
@@ -7,11 +7,17 @@
 {% macro button_multiple(buttons, default) %}
   {% for text, href in buttons %}
     <ul class="ui-multiple-buttons">
-      <li class="{{ text == default or loop.index == default ? "selected" : "" }}">
+      <li class="{{ default != 0 and (text == default or loop.index == default) ? "selected" : "" }}">
         <a href="{{ href }}" class="ui-button">
           {{ text }}
         </a>
       </li>
     </ul>
   {% endfor %}
+{% endmacro %}
+
+{% macro getmore_button(text, href) %}
+  <a class="ui-button" href="{{ href }}">
+    {{ text | default('More') }}
+  </a>
 {% endmacro %}

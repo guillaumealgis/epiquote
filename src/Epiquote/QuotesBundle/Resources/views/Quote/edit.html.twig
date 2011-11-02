@@ -1,24 +1,28 @@
-{% extends '::layout.html.twig' %}
+{% extends 'EpiquoteQuotesBundle:Quote:quote_form.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+
+  <link href="{{ asset('css/forms.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+  
 
 {% block content %}
-<br/>
 
-<h3>Quote edition</h3><br/>
-
-<form action="{{ path('quote_delete', { 'id': entity.id }) }}" method="post">
-  {{ form_widget(delete_form) }}
-  <button type="submit">Delete this quote</button>
-</form>
-
-<br/>
-
-<form action="{{ path('quote_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    {{ form_widget(edit_form) }}
-    <p>
-        <button type="submit">Edit</button>
-    </p>
-</form>
-
-<br/><br/>
+<div class="content">
+  <h2>Edition de la quote #{{ entity.id }}</h2>
+</div>
+  
+  {% set form = edit_form %}
+  {% set submit_text = 'Editer cette quote' %}
+  {% set form_action = path('quote_update', {'id': entity.id }) %}
+  {{ parent() }}
+  
+<div class="content">
+  <form action="{{ path('quote_delete', { 'id': entity.id }) }}" method="post">
+    {{ form_widget(delete_form) }}
+    <button type="submit">Supprimer cette quote</button>
+  </form>
+</div>
 
 {% endblock %}

@@ -10,8 +10,8 @@
     <script type="text/javascript" src="{{ asset('bundles/epiquotequotes/js/quotes.js') }}"></script>
 {% endblock %}
 
-{% block wide_content %}
+{% block content %}
   {{ parent() }}
 
-  {% include 'EpiquoteQuotesBundle:Quote:quote.html.twig' with {'quote': quote} %}
+  {% include 'EpiquoteQuotesBundle:Quote:list.html.twig' with {'quotes': [quote]} %}
 {% endblock %}

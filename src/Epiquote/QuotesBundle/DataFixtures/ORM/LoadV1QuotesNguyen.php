@@ -284,7 +284,7 @@ class LoadV1QuotesNguyen implements FixtureInterface
               'rank' => '-1',
               'author' => 'M. Fabrice Bardeche',
               'context' => 'Lors du discours d\'ouverture d\'ING1.',
-              'content' => 'Lors de la piscine, vous n\'allez pas beaucoup dormir donc vous allez eêtre fatigués.',
+              'content' => 'Lors de la piscine, vous n\'allez pas beaucoup dormir donc vous allez être fatigués.',
             ),
             array
             (

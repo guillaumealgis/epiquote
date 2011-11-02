@@ -21,10 +21,25 @@ body
   background: #fafafa;
 }
 
+h1, h2, h3, h4, h5, h6
+{
+  color: #2f7caf;
+}
+
 a
 {
-  color: inherit;
+  color: #3286be;
   text-decoration: none;
+  
+  -webkit-transition: color 200ms linear;
+  -moz-transition: color 200ms linear;
+  -o-transition: color 200ms linear;
+  transition: color 200ms linear;
+}
+
+a:hover
+{
+  color: #3ab0fe;
 }
 
 .clear
@@ -77,6 +92,12 @@ h1#logo
   float: left;
 }
 
+h1#logo a, h1#logo a:hover, h1#logo a:active
+{
+  color: #3797d7;
+}
+
+
 header div#ordering
 {
   margin-top: 42px;
@@ -104,22 +125,45 @@ header div#ordering
   border-bottom: 1px solid #d6d6d6;
 }
 
+#more-quotes-button
+{
+  text-align: center;
+}
+
 /* =======================    Footer     ========================= */
 
 footer
 {
-  width: 750px;
+  width: 730px;
   margin: auto;
+  padding: 10px;
   background: #fafafa;
   color: #a5a5a5;
 }
 
-footer > div:first-child
+footer a
+{
+  color: #a5a5a5;
+  text-decoration: none;
+  
+  -webkit-transition: color 200ms linear;
+  -moz-transition: color 200ms linear;
+  -o-transition: color 200ms linear;
+  transition: color 200ms linear;
+}
+
+footer a:hover
+{
+  color: #d2d2d2;
+}
+
+
+#footer_left
 {
   float: left;
 }
 
-footer > div:last-child
+#footer_right
 {
   float: right;
 }

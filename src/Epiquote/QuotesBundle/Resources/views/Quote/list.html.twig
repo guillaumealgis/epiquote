@@ -1,10 +1,15 @@
 {# This template is required as we use it to render more quotes via XHR #}
 
 {% for quote in quotes %}
-  {% include 'EpiquoteQuotesBundle:Quote:quote.html.twig' with {'quote': quote} %}
+  <div class="quote content">
+    <h5 class="quote_author">{{quote.author}}</h5>
+    {% if quote.context %}
+      <p class="quote_context">Contexte: {{quote.context | raw }}</p>
+    {% endif %}
+      <br/><p class="quote_content">{{ quote.content | raw }}</p>
+  </div>
 {% else %}
-  <div class="centered">
+  <div class="content centered">
     <p>Aucune quote n'a été trouvée !</p>
-    <br/>
   </div>
 {% endfor %}

@@ -6,26 +6,27 @@
   <link href="{{ asset('css/error.css') }}" type="text/css" rel="stylesheet" />
 {% endblock %}
 
-{% block wide_content %}
+{% block content %}
 
-<div class="float-left">
-  <br/>
-  <!-- Thumbeast by The Oatmeal. http://theoatmeal.com/comics/state_web_winter#tumblr
-       If you don't read his comics, you should. Really. -->
-  <img src="{{ asset('images/thumbeast.png') }}" alt="" />
-  <div id="error_beast_msg">
-    OMG<br/>
-    <span id="code">{{ status_code }}</span><br/>
-    {{ status_text }}<br/>
+<div class="content">
+  <br/><br/><br/><br/>
+  <div id="tumbeast">
+    <!-- Thumbeast by The Oatmeal. http://theoatmeal.com/comics/state_web_winter#tumblr
+         If you don't already read his comics, you should. Really. -->
+    <img src="{{ asset('images/thumbeast.png') }}" alt="" />
+    <div id="error_msg">
+      OMG<br/>
+      <span id="code">{{ status_code }}</span><br/>
+      {{ status_text }}<br/>
+    </div>
   </div>
-</div>
-
-<div id="content">
-  <h2>Server {{ status_code }} error</h2><br/>
-  <h3>Ouch. Looks like something bad.</h3><br/>
+  
+  <br/><br/><br/><br/>
+  <h2>Yep, it's a {{ status_code }}</h2><br/>
+  <h3>I think you broke the internet.</h3><br/>
 
   <p>
-    Something broke. Please <a href="mailto:admin@epiquote.fr">send us an email</a> and let us know
+    Looks like something bad. Please <a href="mailto:admin@epiquote.fr">send us an email</a> and let us know
     what you were doing when this error occurred. We will fix it as soon
     as possible. Sorry for any inconvenience caused.
   </p><br/>
@@ -33,5 +34,7 @@
   <p>
     Server responded: {{ status_code }} {{ status_text }}
   </p>
+  
+  {{ utils.clearer() }}
 </div>
 {% endblock %}

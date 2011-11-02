@@ -1,5 +1,4 @@
 {% extends '::layout.html.twig' %}
-{% import 'EpiquoteQuotesBundle:Quote:macros.html.twig' as macros %}
 
 {% block stylesheets %}
     {{ parent() }}
@@ -17,6 +16,8 @@
   {% include 'EpiquoteQuotesBundle:Quote:list.html.twig' with {'quotes': quotes} %}
   
   {% if quotes | length == 10 %}
-    {{ macros.more_block(next_page_url, 'Page suivante') }}  
+    <div class="content" id="more-quotes-button">
+      {{ ui.getmore_button('Page suivante', next_page_url) }}
+    </div>
   {% endif %}
 {% endblock %}

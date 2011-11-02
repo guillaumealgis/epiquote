@@ -208,15 +208,12 @@ class QuoteController extends Controller
       {
         case 'latest':
           $entities = $repo->findLastests($page);
-          $indic_pos = 43;
           break;
         case 'top':
           $entities = $repo->findBestRateds($page);
-          $indic_pos = 137;
           break;
         case 'random':
           $entities = $repo->findRandoms($page);
-          $indic_pos = 236;
           break;
 
         default:
@@ -225,7 +222,9 @@ class QuoteController extends Controller
       }
 
       if ($this->get('request')->isXmlHttpRequest())
+      {
         $view = 'EpiquoteQuotesBundle:Quote:list.html.twig';
+      }
       else
         $view = 'EpiquoteQuotesBundle:Quote:list_layout.html.twig';
       
@@ -237,7 +236,6 @@ class QuoteController extends Controller
       return $this->render($view, array(
           'quotes'             => $entities,
           'next_page_url'      => $next_url,
-          'indicator_position' => $indic_pos,
       ));
     }
     

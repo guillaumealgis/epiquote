@@ -6,22 +6,25 @@
         CSS for customizing error pages
 */
 
-
-#error_beast_msg
+#tumbeast
 {
-  position: relative;
-  top: -95px;
-  left: 5px;
-  
-  font-family: Mistral, "Comic Sans MS", Brushstroke, fantasy;
-  font-size: 0.8em;
-  text-align: center;
-  color: black;
-  text-shadow: none;
+  float: left;
+  margin-right: 20px;
 }
 
-#error_beast_msg #code
+#tumbeast #error_msg
+{  
+  position: relative;
+  top: -140px;
+  left: 9px;
+  
+  font-family: Mistral, "Comic Sans MS", Brushstroke, fantasy;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+#tumbeast #error_msg #code
 {
-  font-size: 1.2em;
+  font-size: 1.6em;
   font-weight: bold;
 }

@@ -1,0 +1,45 @@
+{% extends '::layout.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+
+  <link href="{{ asset('css/forms.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+  
+{% block javascripts %}
+  {{ parent() }}
+
+  <script src="{{ asset('js/forms.js') }}" type="text/javascript" />
+{% endblock %}
+
+{% block content %}
+
+<div class="content">
+  <form class="inset-labels-form" action="{{ form_action | default(path('quote_create')) }}" method="post" {{ form_enctype(form) }}>
+      {{ form_errors(form) }}
+
+      <div>
+          {{ form_label(form.author, 'Auteur') }}
+          {{ form_errors(form.author) }} <br/>
+          {{ form_widget(form.author, {'attr': {'size': '40'}}) }}
+      </div> <br/>
+
+      <div>
+          {{ form_label(form.context, 'Contexte') }}
+          {{ form_errors(form.context) }} <br/>
+          {{ form_widget(form.context, {'attr': {'class': 'input-wide'}}) }}
+      </div> <br/>
+
+      <div>
+          {{ form_errors(form.content) }}
+          {{ form_widget(form.content, {'attr': {'class': 'textarea-wide'}}) }}
+      </div> <br/>
+
+      {{ form_rest(form) }}
+      <p>
+          <button type="submit">{{ submit_text | default('Ajouter cette quote') }}</button>
+      </p>
+  </form>
+</div>
+
+{% endblock %}
