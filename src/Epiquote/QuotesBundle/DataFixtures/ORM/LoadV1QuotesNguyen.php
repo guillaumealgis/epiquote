@@ -1916,7 +1916,7 @@ class LoadV1QuotesNguyen implements FixtureInterface
               'rank' => '7',
               'author' => 'CeD',
               'context' => 'Justification envoyée à Pedro pour une absence d\'algo, il l\'a mal pris.',
-              'content' => 'Bonjour,<br/><br/>J\'étais en finale départementale en équipe avec pidanc_j, de courses<br/><br/>de montgolfières catégorie vent nord-nord-est dans la Creuse.<br/><br/>Je n\'ai ainsi pas pu participer au cours.<br/><br/><br/><br/>Veuillez m\'en excuser.',
+              'content' => 'Bonjour,<br/><br/>J\'étais en finale départementale en équipe avec pidanc_j, de courses de montgolfières catégorie vent nord-nord-est dans la Creuse.<br/><br/>Je n\'ai ainsi pas pu participer au cours.<br/><br/><br/>Veuillez m\'en excuser.',
             ),
             array
             (
