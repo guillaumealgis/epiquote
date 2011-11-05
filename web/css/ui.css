@@ -129,7 +129,7 @@
   z-index: 20;
 }
 
-.ui-multiple-buttons:first-child a
+.ui-multiple-buttons li:first-child a
 {
   -moz-border-radius-topleft: 2px;
   -moz-border-radius-topright: 0px;
@@ -139,7 +139,7 @@
   border-radius: 2px 0px 0px 2px;
 }
 
-.ui-multiple-buttons:last-child a
+.ui-multiple-buttons li:last-child a
 {
   -moz-border-radius-topleft: 0px;
   -moz-border-radius-topright: 2px;
