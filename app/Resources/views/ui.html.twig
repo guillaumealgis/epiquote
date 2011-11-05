@@ -5,16 +5,16 @@
 {% endmacro %}
 
 {% macro button_multiple(buttons, default) %}
+  <ul class="ui-multiple-buttons">
   {% for button in buttons %}
     {% set text = button[0] %}
     {% set href = button[1] %}
     {% set class = button[2] is defined ? button[2] : '' %}
-    <ul class="ui-multiple-buttons">
-      <li class="{{ default != 0 and (text == default or loop.index == default) ? "selected" : "" }}">
-        <a href="{{ href }}" class="ui-button {{ class }}">{{ text | raw }}</a>
-      </li>
-    </ul>
+    <li class="{{ default != 0 and (text == default or loop.index == default) ? "selected" : "" }}">
+      <a href="{{ href }}" class="ui-button {{ class }}">{{ text | raw }}</a>
+    </li>
   {% endfor %}
+  </ul>
 {% endmacro %}
 
 {% macro getmore_button(text, href) %}
