@@ -13,16 +13,103 @@
 
 h5.quote_author
 {
+  float: left;
+  margin-right: 10px;
   font-size: 1em;
   color: #3484c3;
 }
 
+.quote_metas
+{
+  font-size: 0.9em;
+  color: gray;
+}
+
+.quote_context, .quote_content
+{
+  width: 590px;
+}
+
 .quote_context
 {
+  margin-top: 3px;
   color: #727171;
 }
 
 .quote_content
 {
   color: #222222;
+}
+
+.quote_vote
+{
+  width: 100px;
+  float: right;
+}
+
+.quote_vote ul
+{
+  float: right;
+}
+
+.quote_vote a
+{
+  font-family: Arial;
+  padding: 3px 10px;
+}
+
+.quote_rank
+{
+  cursor: default;
+}
+
+/*
+ * These :hover and :active pseudo classes just are copies of .ui-button default
+ * state, as rank is not clickable and should not behave like a proper button
+ */
+.quote_rank:hover
+{
+  color: #6c6c6c;
+  
+  border: 1px solid #d1d1d1;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  
+  background: #f5f5f5;
+  background: -moz-linear-gradient(top, #f5f5f5 0%, #f1f1f1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#f1f1f1));
+  background: -webkit-linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  background: -o-linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  background: -ms-linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  background: linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/*
+ * @See .quote_rank:hover
+ */
+.quote_rank:active
+{
+  color: #6c6c6c;
+  
+  border: 1px solid #d1d1d1;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  
+  background: #f5f5f5;
+  background: -moz-linear-gradient(top, #f5f5f5 0%, #f1f1f1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#f1f1f1));
+  background: -webkit-linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  background: -o-linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  background: -ms-linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  background: linear-gradient(top, #f5f5f5 0%,#f1f1f1 100%);
+  
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }

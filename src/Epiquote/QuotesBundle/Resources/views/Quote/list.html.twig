@@ -1,12 +1,23 @@
 {# This template is required as we use it to render more quotes via XHR #}
 
+{% import '::ui.html.twig' as ui %}
+
 {% for quote in quotes %}
-  <div class="quote content">
-    <h5 class="quote_author">{{quote.author}}</h5>
+  <div class="content quote">
+    
+    <div class="quote_vote">
+      {{ ui.button_multiple([["&ndash;", path('quote_downvote', {'id': quote.id})],
+                             [quote.rank, "#", 'quote_rank'],
+                             ["+", path('quote_upvote', {'id': quote.id})]])
+      }}
+    </div>
+    
+    <h5 class="quote_author">{{quote.author}}</h5> 
+    <p class="quote_metas"><a href="{{ path('quote_show', {'id': quote.id}) }}">#{{ quote.id }}</a>, postée le {{ quote.createdAt | date('d/m/Y') }}</p>
     {% if quote.context %}
       <p class="quote_context">Contexte: {{quote.context | raw }}</p>
     {% endif %}
-      <br/><p class="quote_content">{{ quote.content | raw }}</p>
+    <br/><p class="quote_content">{{ quote.content | raw }}</p>
   </div>
 {% else %}
   <div class="content centered">

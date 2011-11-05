@@ -20,9 +20,9 @@
       
       <div id="ordering">
         {% set orderings = {'': 0, 'latest': 1, 'top': 2, 'random': 3} %}
-        {{ ui.button_multiple({"Dernières": path('quote_list', {'ordering': 'latest'}),
-                               "Top":       path('quote_list', {'ordering': 'top'}),
-                               "Au hasard": path('quote_list', {'ordering': 'random'})},
+        {{ ui.button_multiple([["Dernières", path('quote_list', {'ordering': 'latest'})],
+                               ["Top",       path('quote_list', {'ordering': 'top'})],
+                               ["Au hasard", path('quote_list', {'ordering': 'random'})]],
                                 orderings[app.request.get('ordering')])
         }}
       </div>
