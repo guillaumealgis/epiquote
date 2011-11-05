@@ -109,7 +109,7 @@ header div#ordering
 #page
 {
   width: 750px;
-  min-height: 150px;
+  min-height: 100px;
   margin: auto;
   border: 1px solid #e0e0e0;
   background: white;
