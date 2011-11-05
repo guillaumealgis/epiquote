@@ -112,10 +112,11 @@ header div#ordering
   min-height: 200px;
   margin: auto;
   border: 1px solid #e0e0e0;
+  background: white;
   
-  -webkit-box-shadow: 0px 0px 7px -2px #b0b0b0;
-  -moz-box-shadow: 0px 0px 7px -2px #b0b0b0;
-  box-shadow: 0px 0px 7px -2px #b0b0b0;
+  -webkit-box-shadow: 0px 0px 2px -1px #b0b0b0;
+  -moz-box-shadow: 0px 0px 2px -1px #b0b0b0;
+  box-shadow: 0px 0px 2px -1px #b0b0b0;
 }
 
 .content
@@ -123,6 +124,15 @@ header div#ordering
   width: 700px; /* 750px - 2 * 25px */
   padding: 25px;
   border-bottom: 1px solid #d6d6d6;
+}
+
+#add-search
+{
+  background: #f7f7f7;
+  
+  -webkit-box-shadow: inset 0px 1px #ffffff;
+  -moz-box-shadow: inset 0px 1px #ffffff;
+  box-shadow: inset 0px 1px #ffffff;
 }
 
 #more-quotes-button
