@@ -36,7 +36,8 @@
           {{ ui.button("Nouvelle quote", path('quote_new'), ["blue", "float-left"]) }}
           
           <div class="float-right">
-            {% render "EpiquoteQuotesBundle:Search:search" %}
+            {% render "EpiquoteQuotesBundle:Search:search"
+               with {'pattern': app.request.get('search') is not empty ? app.request.get('search').pattern : ''} %}
           </div>
               
           {{ utils.clearer() }}

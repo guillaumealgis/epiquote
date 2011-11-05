@@ -16,6 +16,10 @@ h5.quote_author
   float: left;
   margin-right: 10px;
   font-size: 1em;
+}
+
+h5.quote_author a
+{
   color: #3484c3;
 }
 
