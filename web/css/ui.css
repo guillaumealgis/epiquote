@@ -198,7 +198,7 @@
 
 input, textarea, button, .ui-button
 {
-  font-size: 12px;
+  font-size: 1em;
 }
 
 input[type=text], input[type=password], input[type=email], textarea

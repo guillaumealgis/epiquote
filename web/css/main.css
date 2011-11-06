@@ -14,10 +14,17 @@
   padding: 0;
 }
 
+html, body { -webkit-text-size-adjust: none; }
+
+html
+{
+  font-size: 100%;
+}
+
 body
 {
   font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
-  font-size: 12px;
+  font-size: 0.75em;
   background: #fafafa;
 }
 
@@ -25,6 +32,8 @@ h1, h2, h3, h4, h5, h6
 {
   color: #2f7caf;
 }
+
+h5 { font-size: 1em; }
 
 a
 {
@@ -84,7 +93,7 @@ h1#logo
   padding: 0;
   margin: 0;
   font-family: 'Droid Serif', serif;
-  font-size: 48px;
+  font-size: 4em;
   line-height: 39px;
   height: 48px;
   color: #3797d7;
