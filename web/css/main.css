@@ -57,6 +57,11 @@ a:hover
   clear: both;
 }
 
+.display-none
+{
+  display: none;
+}
+
 .centered
 {
   text-align: center;

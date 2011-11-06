@@ -4,3 +4,22 @@
 {% block title %}
   {{ parent() }} - Nouvelle quote
 {% endblock %}
+  
+{% block stylesheets %}
+  {{ parent() }}
+  
+  <link href="{{ asset('css/jquery-ui-1.8.16.custom.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+  
+{% block javascripts %}
+  {{ parent() }}
+  
+  <script type="text/javascript" src="{{ asset('js/jquery-ui-1.8.16.custom.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/epiquotequotes/js/new_quote.js') }}"></script>
+{% endblock %}
+  
+{% block content %}
+  {{ parent() }}
+  
+  <div id="autocomplete_author" class="display-none">{{ path('autocomplete_author') }}</div>
+{% endblock %}

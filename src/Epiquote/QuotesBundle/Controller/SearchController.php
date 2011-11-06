@@ -3,6 +3,7 @@
 namespace Epiquote\QuotesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 use Epiquote\QuotesBundle\Entity\Quote;
 use Epiquote\QuotesBundle\Form\SearchType;
@@ -21,6 +22,7 @@ class SearchController extends Controller
           'form' => $form->createView()
       ));
     }
+    
     public function resultsAction($page)
     {
       $request = $this->getRequest();
@@ -44,8 +46,8 @@ class SearchController extends Controller
             'page'     => $page + 1
         ));
         
-        if ($this->get('request')->isXmlHttpRequest())
-          $view = 'EpiquoteQuotesBundle:Quote:list.html.twig';
+        if ($this->get('request')->isXmlHttpRequest() || $request->getRequestFormat() != 'html')
+          $view = 'EpiquoteQuotesBundle:Quote:list.' . $request->getRequestFormat() . '.twig';
         else
           $view = 'EpiquoteQuotesBundle:Quote:list_layout.html.twig';
         
@@ -59,5 +61,26 @@ class SearchController extends Controller
         
       // Error in form
       return $this->redirect($this->generateUrl('/'));
+    }
+    
+    /**
+     * Used for autocomplete in quote/new on field "author"
+     * 
+     * @param type $term The value entered by the user in the field "author"
+     * @return type JSON list of matching authors
+     */
+    public function autocompleteAuthorAction()
+    {
+      $term = $this->get('request')->get('term');
+      if (!$term)
+        $authors = array();
+      else
+      {
+        $em = $this->getDoctrine()->getEntityManager();
+        $authors = $em->getRepository('EpiquoteQuotesBundle:Quote')
+                      ->findAuthorsMatchingPattern($term);
+      }
+
+      return new Response(json_encode($authors));
     }
 }

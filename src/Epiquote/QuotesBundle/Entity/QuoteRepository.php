@@ -78,4 +78,18 @@ class QuoteRepository extends EntityRepository
     
     return $qb->getQuery()->getResult();
   }
+  
+  public function findAuthorsMatchingPattern($pattern)
+  {
+    // We search for matching authors
+    $qb = $this->createQueryBuilder('q')
+            ->select('q.author AS value, COUNT(q.id) AS nb')
+            ->where('q.author LIKE ?1')
+            ->setParameter(1, preg_replace('/\W+/', '%' , '%'.$pattern.'%'))
+            ->setMaxResults(10)
+            ->groupBy('q.author')
+            ->orderBy('nb', 'DESC');
+    
+    return $qb->getQuery()->getResult();
+  }
 }

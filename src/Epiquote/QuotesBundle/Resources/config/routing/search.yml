@@ -3,5 +3,12 @@ search:
     defaults: { _controller: "EpiquoteQuotesBundle:Search:search" }
     
 search_results:
-    pattern: /results/{page}
-    defaults: { _controller: "EpiquoteQuotesBundle:Search:results", page: 1 }
+    pattern: /results.{_format}/{page}
+    defaults: { _controller: "EpiquoteQuotesBundle:Search:results", page: 1, _format: html }
+    requirements:
+      _format:  html|json
+      page:     \d+
+      
+autocomplete_author:
+    pattern: /author
+    defaults: { _controller: "EpiquoteQuotesBundle:Search:autocompleteAuthor", _format: json }

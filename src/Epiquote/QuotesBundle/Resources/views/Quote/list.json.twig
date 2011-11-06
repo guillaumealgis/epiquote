@@ -1,0 +1,11 @@
+[
+{% for quote in quotes %}
+  {
+    "id": {{ quote.id }}
+    "author": {{ quote.author }}
+    "context": {{ quote.context }}
+    "content": {{ quote.content }}
+    "created_at": {{ quote.createdAt | date('c') }}
+  }
+{% endfor %}
+]
