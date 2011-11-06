@@ -135,6 +135,11 @@ header div#ordering
   border-bottom: 1px solid #d6d6d6;
 }
 
+.page_paragraph
+{
+  line-height: 1.8em;
+}
+
 #add-search
 {
   background: #f7f7f7;
