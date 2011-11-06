@@ -1,3 +1,13 @@
 {% macro clearer() %}
   <div class="clear"></div>
 {% endmacro %}
+
+{% macro orderingToFrench(ordering) %}
+  {% if ordering == 'latest' %}
+    Dernières
+  {% elseif ordering == 'top' %}
+    Top
+  {% elseif ordering == 'random' %}
+    Au hasard
+  {% endif %}
+{% endmacro %}

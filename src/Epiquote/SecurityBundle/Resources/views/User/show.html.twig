@@ -1,5 +1,9 @@
 {% extends '::layout.html.twig' %}
 
+{% block title %}
+  {{ parent() }} - Utilsateur #{{ entity.id }} {{ entity.username }}
+{% endblock %}
+
 {% block stylesheets %}
   {{ parent() }}
 

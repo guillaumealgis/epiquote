@@ -1,5 +1,9 @@
 {% extends '::layout.html.twig' %}
 
+{% block title %}
+  {{ parent() }} - Quote #{{ quote.id }}
+{% endblock %}
+
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('bundles/epiquotequotes/css/quotes.css') }}" type="text/css" rel="stylesheet" />

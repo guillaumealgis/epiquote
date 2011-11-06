@@ -1,5 +1,17 @@
 {% extends '::layout.html.twig' %}
 
+{% import '::utils.html.twig' as utils %}
+
+{% block title %}
+  {% if app.request.get('ordering') is not empty %}
+    {{ parent() }} - {{ utils.orderingToFrench(app.request.get('ordering')) }}
+  {% elseif app.request.get('search') is not empty %}
+    {{ parent() }} - {{ app.request.get('search')['pattern'] }}
+  {% else %}
+    {{ parent() }}
+  {% endif %}
+{% endblock %}
+
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('bundles/epiquotequotes/css/quotes.css') }}" type="text/css" rel="stylesheet" />

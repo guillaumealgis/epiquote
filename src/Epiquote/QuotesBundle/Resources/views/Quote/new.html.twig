@@ -1,2 +1,6 @@
 {# Defaults values in the template are doing all the work here... #}
-{% include 'EpiquoteQuotesBundle:Quote:quote_form.html.twig' %}
+{% extends 'EpiquoteQuotesBundle:Quote:quote_form.html.twig' %}
+
+{% block title %}
+  {{ parent() }} - Nouvelle quote
+{% endblock %}
