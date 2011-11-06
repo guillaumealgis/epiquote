@@ -306,7 +306,7 @@ class LoadV1QuotesNguyen implements FixtureInterface
             (
               'id' => '35',
               'rank' => '-3',
-              'author' => 'Jean-Marc Le-Roux',
+              'author' => 'Jean-Marc Le Roux',
               'context' => 'Piscine-j05 : Memory Manager',
               'content' => 'Un champ de bits est un champ de bits...',
             ),
@@ -546,7 +546,7 @@ class LoadV1QuotesNguyen implements FixtureInterface
             (
               'id' => '65',
               'rank' => '4',
-              'author' => 'Jean-Marc Le-Roux',
+              'author' => 'Jean-Marc Le Roux',
               'context' => '',
               'content' => 'Libérer la mémoire c\'est pour les pauvres, il suffit d\'acheter des barrettes de RAM.<br/>',
             ),
@@ -2506,9 +2506,9 @@ class LoadV1QuotesNguyen implements FixtureInterface
             (
               'id' => '335',
               'rank' => '-1',
-              'author' => 'Jean-Marc L.R.',
+              'author' => 'Jean-Marc Le Roux',
               'context' => 'Discussion à propos de l\'amendement 844',
-              'content' => 'Jean-Marc L.R.: Internet, si y\'a personne pour le consulter<br/><br/>Jean-Marc L.R.: c\'est rien<br/><br/>Jean-Marc L.R.: c\'est du vice<br/><br/>Jean-Marc L.R.: vide*<br/><br/>',
+              'content' => 'Jean-Marc Le Roux: Internet, si y\'a personne pour le consulter<br/><br/>Jean-Marc Le Roux: c\'est rien<br/><br/>Jean-Marc Le Roux: c\'est du vice<br/><br/>Jean-Marc Le Roux: vide*<br/><br/>',
             ),
             array
             (
@@ -2594,9 +2594,9 @@ class LoadV1QuotesNguyen implements FixtureInterface
             (
               'id' => '346',
               'rank' => '0',
-              'author' => 'Jean-Marc L.R.',
+              'author' => 'Jean-Marc Le Roux',
               'context' => '',
-              'content' => 'Jean-Marc L.R.: En gros, ça veut dire que sur mes deux cores pourris, j\'en utilise qu\'un...<br/><br/>Jean-Marc L.R.: han, c\'est ambigü comme phrase :-O ça fait grave nécro...',
+              'content' => 'Jean-Marc Le Roux: En gros, ça veut dire que sur mes deux cores pourris, j\'en utilise qu\'un...<br/><br/>Jean-Marc Le Roux: han, c\'est ambigü comme phrase :-O ça fait grave nécro...',
             ),
             array
             (
@@ -2762,7 +2762,7 @@ class LoadV1QuotesNguyen implements FixtureInterface
             (
               'id' => '373',
               'rank' => '8',
-              'author' => 'Jean-Marc L. R.',
+              'author' => 'Jean-Marc Le Roux',
               'context' => '',
               'content' => 'J\'étais très respectueux des femmes avant que j\'en rencontre.',
             ),
