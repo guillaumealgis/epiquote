@@ -205,14 +205,11 @@ class Quote
     }
     
     /**
-     * Remove all html and php tags from quote context and content and
-     * replaces newlines by <br/> tags
+     * Remove all html and php tags from quote context and content
      */
     public function sanitize()
     {
-      $this->context = nl2br(strip_tags($this->context));
-      
-      // Same thing for the content
-      $this->content = nl2br(strip_tags($this->content));
+      $this->context = strip_tags($this->context);
+      $this->content = strip_tags($this->content);
     }
 }
