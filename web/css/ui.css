@@ -51,9 +51,9 @@
 
 .ui-button:active, input[type=submit]:active, button:active
 {
-  -webkit-box-shadow: inset 0px 1px 3px -1px #b3b3b3;
-  -moz-box-shadow: inset 0px 1px 3px -1px #b3b3b3;
-  box-shadow: inset 0px 1px 3px -1px #b3b3b3;
+  -webkit-box-shadow: inset 0px 1px 3px 0 #b3b3b3;
+  -moz-box-shadow: inset 0px 1px 3px 0 #b3b3b3;
+  box-shadow: inset 0px 1px 3px 0 #b3b3b3;
 }
 
 /* ===================    Button color variations     ===================== */
@@ -96,9 +96,9 @@
 
 .ui-button.blue:active
 { 
-  -webkit-box-shadow: inset 0px 1px 6px -1px #216c9e;
-  -moz-box-shadow: inset 0px 1px 6px -1px #216c9e;
-  box-shadow: inset 0px 1px 6px -1px #216c9e;
+  -webkit-box-shadow: inset 0px 1px 3px 0 #216c9e;
+  -moz-box-shadow: inset 0px 1px 3px 0 #216c9e;
+  box-shadow: inset 0px 1px 3px 0 #216c9e;
 }
 
 /* ====================    Button mutiple choices     ===================== */
@@ -159,9 +159,9 @@
   color: #474747;
   
   border: 1px solid #bbbbbb;
-  -webkit-box-shadow: inset 0px 0px 8px 0px #bababa;
-  -moz-box-shadow: inset 0px 0px 8px 0px #bababa;
-  box-shadow: inset 0px 0px 8px 0px #bababa;
+  -webkit-box-shadow: inset 0px 1px 3px 0px #bababa;
+  -moz-box-shadow: inset 0px 1px 3px 0px #bababa;
+  box-shadow: inset 0px 1px 3px 0px #bababa;
   
   background: #ededed;
   background: -moz-linear-gradient(top, #ededed 0%, #e1e1e1 100%);
