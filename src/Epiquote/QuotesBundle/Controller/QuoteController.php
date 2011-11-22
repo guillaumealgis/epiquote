@@ -247,6 +247,9 @@ class QuoteController extends Controller
      */
     public function voteAction($id, $delta)
     {
+      // FIXME: Implement a working voting system
+      throw $this->createNotFoundException();
+      
       $em = $this->getDoctrine()->getEntityManager();
       
       try
