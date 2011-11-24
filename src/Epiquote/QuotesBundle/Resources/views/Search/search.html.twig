@@ -2,7 +2,7 @@
   {{ form_errors(form) }}
 
   {{ form_errors(form.pattern) }}
-  {{ form_widget(form.pattern, {'attr': {'value': app.request.get('pattern') is not empty ? app.request.get('pattern') : '' }}) }}
+  {{ form_widget(form.pattern, app.request.get('pattern') is not empty ? {'attr': {'value':  app.request.get('pattern')}} : {}) }}
 
   {{ form_rest(form) }}
   <input type="submit" value="Rechercher" />
