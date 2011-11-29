@@ -1,6 +1,6 @@
 #! /bin/sh
 
-cd `dirname $0`
+cd `dirname $0`/../
 
 if [ ! $1 ]; then
     echo "Usage: ./bump-version.sh version-id"
