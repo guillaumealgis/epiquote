@@ -154,6 +154,11 @@ header div#ordering
   box-shadow: inset 0px 1px #ffffff;
 }
 
+#search_pattern
+{
+  width: 400px;
+}
+
 #more-quotes-button
 {
   text-align: center;

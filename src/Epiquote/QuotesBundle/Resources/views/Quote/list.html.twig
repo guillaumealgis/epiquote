@@ -5,12 +5,12 @@
 {% for quote in quotes %}
   <div class="content quote">
     
-    <div class="quote_vote">
+    {#<div class="quote_vote">
       {{ ui.button_multiple([["&ndash;", path('quote_downvote', {'id': quote.id})],
                              [quote.rank, "#", 'quote_rank'],
                              ["+", path('quote_upvote', {'id': quote.id})]])
       }}
-    </div>
+    </div>#}
     
     <a href="{{ path('search_results', {'search[pattern]': quote.author}) }}"><h5 class="quote_author">{{quote.author}}</h5> </a>
     <p class="quote_metas"><a href="{{ path('quote_show', {'id': quote.id}) }}">#{{ quote.id }}</a>, postée le {{ quote.createdAt | date('d/m/Y') }}</p>

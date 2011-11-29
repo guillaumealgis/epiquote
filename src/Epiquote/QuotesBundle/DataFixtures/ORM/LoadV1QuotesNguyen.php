@@ -2242,7 +2242,7 @@ class LoadV1QuotesNguyen implements FixtureInterface
             (
               'id' => "295",
               'rank' => "2",
-              'author' => "M. Akli Adjaoute",
+              'author' => "Dr Akli Adjaoute",
               'context' => "",
               'content' => "Un informaticien qui ne code pas, c'est pire qu'une vache qui ne donne pas de lait.",
             ),
