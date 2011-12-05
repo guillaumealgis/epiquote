@@ -17,9 +17,12 @@ class SyndicationController extends Controller
             ->getRepository('EpiquoteQuotesBundle:Quote')
             ->findLastests(1, 20);
     
-    return $this->render('EpiquoteQuotesBundle:Syndication:rss.twig.xml', array(
+    $response = $this->render('EpiquoteQuotesBundle:Syndication:rss.twig.xml', array(
         'quotes' => $quotes,
     ));
+    $response->headers->set('Content-Type', 'application/rss+xml; charset=UTF-8');
+    
+    return $response;
   }
   
   public function atomAction()
@@ -41,11 +44,14 @@ class SyndicationController extends Controller
               'urn:uuid:');
     }
     
-    return $this->render('EpiquoteQuotesBundle:Syndication:atom.twig.xml', array(
+    $response = $this->render('EpiquoteQuotesBundle:Syndication:atom.twig.xml', array(
         'app_uuid' => $app_uuid,
         'quotes'   => $quotes,
         'uuids'    => $uuids,
     ));
+    $response->headers->set('Content-Type', 'application/atom+xml; charset=UTF-8');
+    
+    return $response;
   }
   
   /**
