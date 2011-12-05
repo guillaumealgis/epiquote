@@ -16,7 +16,7 @@
     <link href="{{ url('quote_show', {'id': quote.id}) }}"/>
     <id>{{ uuids[loop.index - 1] }}</id>
     <updated>{{ quote.createdAt | date('Y-m-d\\TH:i:s\\Z') }}</updated>
-    <summary>{{ quote.author }}: (Contexte: {{ quote.context }}) "{{ quote.content }}"</summary>
+    <summary>{{ quote.author }}: {% if not quote.context is empty %} (Contexte: {{ quote.context }}) {% endif %}"{{ quote.content }}"</summary>
   </entry>
   {% endfor %}
 </feed>

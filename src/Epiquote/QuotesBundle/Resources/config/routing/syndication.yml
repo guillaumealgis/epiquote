@@ -1,7 +1,11 @@
 syndication_rss:
-    pattern:  /rss
-    defaults: { _controller: "EpiquoteQuotesBundle:Syndication:rss" }
+    pattern:  /rss.{_format}
+    defaults: { _controller: "EpiquoteQuotesBundle:Syndication:rss", _format: xml }
+    requirements:
+      _format: xml|rss
 
 syndication_atom:
-    pattern:  /atom
-    defaults: { _controller: "EpiquoteQuotesBundle:Syndication:atom" }
+    pattern:  /atom.{_format}
+    defaults: { _controller: "EpiquoteQuotesBundle:Syndication:atom", _format: xml }
+    requirements:
+      _format: xml|atom

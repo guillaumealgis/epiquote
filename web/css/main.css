@@ -118,6 +118,23 @@ header div#ordering
   float: right;
 }
 
+/* ===================    Social links     ===================== */
+
+#social_links
+{
+  width: 16px;
+  height: 0px;
+  position: relative;
+  margin: auto;
+  left: 390px;
+  top: 12px;
+}
+
+#social_links img
+{
+  margin-bottom: 2px;
+} 
+
 /* =======================    Page     ========================= */
 
 #page
@@ -188,7 +205,7 @@ footer a
 
 footer a:hover
 {
-  color: #d2d2d2;
+  color: #7A7A7A;
 }
 
 

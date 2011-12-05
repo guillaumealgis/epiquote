@@ -5,6 +5,8 @@
     <title>{% block title %}Epiquote{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="alternate" type="application/rss+xml" title="Epiquote.fr - Dernières quotes (RSS 2.0)" href="{{ path('syndication_rss') }}" />
+    <link rel="alternate" type="application/atom+xml" title="Epiquote.fr - Dernières quotes (Atom)" href="{{ path('syndication_atom') }}" />
   </head>
   <body>
     {% block body %}{% endblock %}

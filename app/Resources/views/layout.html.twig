@@ -12,6 +12,7 @@
 {% block javascripts %}
   <script type="text/javascript" src="{{ asset('js/google-analytics.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/jquery-1.6.4.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/social.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -31,6 +32,14 @@
   {% endblock %}
     
   {% block page %}
+    {% block social_links %}
+      <div id="social_links">
+        <a title="Flux RSS" href="{{ path('syndication_rss') }}"><img src="{{ asset('images/social/feed_white.png') }}" alt="Flux RSS" /></a>
+        <a title="Flux Atom" href="{{ path('syndication_atom') }}"><img src="{{ asset('images/social/feed_white.png') }}" alt="Flux Atom" /></a>
+        <a title="Suivez nous sur twitter: @EpiquoteFr" href="https://twitter.com/#!/EpiquoteFr"><img src="{{ asset('images/social/twitter_white.png') }}" alt="Twitter @EpiquoteFr" /></a>
+      </div>
+    {% endblock %}
+  
     <div id="page">
       {% block add_search %}
         <div class="content" id="add-search">
@@ -60,6 +69,12 @@
         <a href="{{ path('pages_legal') }}">Informations légales</a>
         &nbsp;|&nbsp;
         <a href="{{ path('pages_about') }}">A propos</a>
+        &nbsp;|&nbsp;
+        <a href="{{ path('syndication_rss') }}">RSS</a>
+        /
+        <a href="{{ path('syndication_atom') }}">Atom</a>
+        &nbsp;|&nbsp;
+        <a href="https://twitter.com/#!/EpiquoteFr">@EpiquoteFr</a>
       </div>
       {{ utils.clearer() }}
     </footer>
