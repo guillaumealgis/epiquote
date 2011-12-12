@@ -16,7 +16,13 @@
     <link href="{{ url('quote_show', {'id': quote.id}) }}"/>
     <id>{{ uuids[loop.index - 1] }}</id>
     <updated>{{ quote.createdAt | date('Y-m-d\\TH:i:s\\Z') }}</updated>
-    <summary>{{ quote.author }}: {% if not quote.context is empty %} (Contexte: {{ quote.context }}) {% endif %}"{{ quote.content }}"</summary>
+    <summary type="html">
+      <![CDATA[
+      <strong>{{ quote.author }}</strong><br/>
+      {% if not quote.context is empty %}<em>Contexte: {{ quote.context | nl2br }}</em><br/>{% endif %}
+      {{ quote.content | nl2br }}
+      ]]>
+    </summary>
   </entry>
   {% endfor %}
 </feed>
