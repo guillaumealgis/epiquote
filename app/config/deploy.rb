@@ -17,7 +17,8 @@ role :db,         domain, :primary => true       # This is where Rails migration
 set  :use_sudo,   false
 set  :keep_releases,  3
 
-set  :update_vendors,    true
+#set  :update_vendors,    true
+set  :update_vendors,    false
 set  :shared_files,      ["app/config/parameters.ini"]
 set  :shared_children,   [app_path + "/logs", web_path + "/uploads", "vendor"]
 set  :user,              "deployer"

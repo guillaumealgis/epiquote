@@ -7,7 +7,13 @@
         {% for quote in quotes %}
         <item>
             <title>Quote #{{ quote.id }}</title>
-            <description>{{ quote.author }}: {% if not quote.context is empty %}(Contexte: {{ quote.context }}) {% endif %}"{{ quote.content }}"</description>
+            <description>
+	      <![CDATA[
+	      <strong>{{ quote.author }}</strong><br/>
+	      {% if not quote.context is empty %}<em>Contexte: {{ quote.context | nl2br }}</em><br/>{% endif %}
+	      {{ quote.content | nl2br }}
+	      ]]>
+	    </description>
             <pubDate>{{ quote.createdAt | date('D, d M Y H:i:s O') }}</pubDate>
             <link>{{ url('quote_show', {'id': quote.id}) }}</link>
         </item>
